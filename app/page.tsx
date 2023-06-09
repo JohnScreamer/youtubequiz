@@ -15,7 +15,6 @@ export default async function Home(props: { searchParams: { title: string } }) {
                 <div className="w-full h-full   grow flex md:mt-0 mt-2 ">
                     <section className=" grow rounded-xl ">
                         <Suspense fallback={<Spiner />}>
-                            {/* @ts-expect-error Server Component */}
                             <VideoList
                                 title={props?.searchParams?.title || ""}
                             />
