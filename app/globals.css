@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:wght@200;300;400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +26,148 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+/* body {
+    background: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+    );
+} */
+
+.App[data-theme="light"] {
+    --main-bg: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+    );
+    --main-color: black;
+    --svg-color: rgb(54, 52, 52);
+    --form-bg: rgba(76, 72, 72, 0.181);
+}
+.App[data-theme="dark"] {
+    --main-bg: radial-gradient(
+        circle,
+        rgb(135, 80, 104) 0%,
+        rgba(10, 34, 61, 1) 100%
+    );
+    --main-color: whitesmoke;
+    --svg-color: rgb(0, 0, 0);
+    --form-bg: rgba(129, 125, 125, 0.284);
+}
+.App {
+    background: var(--main-bg);
+    color: var(--main-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    font-weight: 600;
+}
+.pixel {
+    font-family: "Press Start 2P", cursive;
+}
+
+.container {
+    width: 100px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bar {
+    background-color: red;
+    width: 10px;
+    height: 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.bar:nth-child(1) {
+    animation: bnce 0.7s 0.1s infinite alternate;
+}
+@keyframes bnce {
+    30% {
+        height: 30px;
+        background-color: var(--main-color);
+    }
+    60% {
+        height: 50px;
+        background-color: var(--main-color);
+    }
+    100% {
+        height: 20px;
+        background-color: var(--main-color);
+    }
+}
+.bar:nth-child(2) {
+    animation: bnce2 0.5s 0.5s infinite alternate;
+}
+@keyframes bnce2 {
+    20% {
+        height: 50px;
+        background-color: var(--main-color);
+    }
+    40% {
+        height: 30px;
+        background-color: var(--main-color);
+    }
+    100% {
+        height: 60px;
+        background-color: var(--main-color);
+    }
+}
+.bar:nth-child(3) {
+    animation: bnce3 0.8s 0.3s infinite alternate;
+}
+@keyframes bnce3 {
+    80% {
+        height: 70px;
+    }
+    100% {
+        background-color: var(--main-color);
+    }
+}
+.bar:nth-child(4) {
+    animation: bnce4 0.6s 0.7s infinite alternate;
+}
+@keyframes bnce4 {
+    70% {
+        height: 45px;
+    }
+    100% {
+        background-color: var(--main-color);
+    }
+}
+.bar:nth-child(5) {
+    animation: bnce5 0.5s 0.2s infinite alternate;
+}
+@keyframes bnce5 {
+    60% {
+        height: 20px;
+    }
+    100% {
+        background-color: var(--main-color);
+    }
+}
+
+.MuiOutlinedInput-colorSecondary {
+    border: none;
+}
+
+@layer components {
+    .upStyle {
+        @apply active:shadow-[inset_5px_10px_10px_black] focus:shadow-[inset_1px_3px_4px_black] 
+        border-t   hover:border-t-transparent      border-b-transparent border-t-indigo-100    border-b  hover:border-b-indigo-100
+        shadow-[1px_3px_4px_black];
+    }
+    .downStyle {
+        @apply border-b  border-b-indigo-100 p-4   rounded-xl   
+        shadow-[inset_1px_3px_4px_black];
+    }
+    .upStyleNoAnim {
+        @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100   border-b  shadow-[1px_3px_4px_black];
+    }
 }
