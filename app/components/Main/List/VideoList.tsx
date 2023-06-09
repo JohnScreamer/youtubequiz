@@ -11,7 +11,7 @@ const getAllQuiz = async (title: string) => {
     return response.playlist;
 };
 
-const VideoList = async (props: { title: string }) => {
+const VideoList: any = async (props: { title: string }) => {
     const data = await getAllQuiz(props.title || "");
 
     return (
