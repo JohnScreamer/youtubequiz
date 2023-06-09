@@ -11,7 +11,7 @@ type listItemType = {
 
 const listItem: FC<listItemType> = ({ list: { title, list }, id }) => {
     const imgArr = list.slice(0, 12).map((el) => (
-        <div className=" p-2 downStyle ">
+        <div className=" p-2 downStyle " key={el._id}>
             <div className="relative  pt-[70%] rounded-xl overflow-hidden  w-full ">
                 <Image src={el.img} fill={true} alt="playlist img" />
             </div>

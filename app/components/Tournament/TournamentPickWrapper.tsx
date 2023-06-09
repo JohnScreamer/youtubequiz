@@ -33,12 +33,13 @@ const TournamentPickWrapper: FC<TournamentPickWrapperType> = ({
                     <h1 className="text-center">Round 1/{totalSongs / 2}</h1>
                     <div className="md:flex hidden  py-6 gap-6 ">
                         {currentSongs.map((el) => (
-                            <Title>{el.title}</Title>
+                            <Title key={el._id}>{el.title}</Title>
                         ))}
                     </div>
                     <div className="  flex md:flex-row     flex-col w-full gap-6">
                         {currentSongs.map((el) => (
                             <TournamentCard
+                                key={el._id}
                                 videoData={el}
                                 pickVideo={pickVideo}
                             />

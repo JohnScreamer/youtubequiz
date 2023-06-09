@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 import Playlist from "../models/PlaylistModel";
-import { headers } from "next/headers";
 
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);

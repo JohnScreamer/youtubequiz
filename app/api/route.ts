@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 import Playlist from "./models/PlaylistModel";
-import { VideoType } from "@/src/Redux/Slice/common";
+import { VideoType } from "../../src/Redux/Slice/common";
 
 type allData = {
     totalAmount: number;

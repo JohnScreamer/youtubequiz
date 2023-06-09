@@ -18,6 +18,7 @@ const RoundsCount: FC<RoundsCountType> = ({ num, id }) => {
         if (el < num) {
             return (
                 <Link
+                    key={el}
                     className="w-full"
                     href={`/tournamentPick?id=${id}&rounds=${el}`}
                 >
