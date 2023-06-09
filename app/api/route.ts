@@ -39,7 +39,7 @@ export async function GET(req: Request) {
                 url: el.snippet.resourceId.videoId,
                 img: getImg(el.snippet.thumbnails),
             }));
-            allData.list = [...allData.list, ...list];
+            allData.list = [...allData.list, ...(list as VideoType[])];
             await getAll(chunkList);
         }
     };
@@ -51,7 +51,7 @@ export async function GET(req: Request) {
             url: el.snippet.resourceId.videoId,
             img: getImg(el.snippet.thumbnails),
         }));
-        allData.list = [...allData.list, ...list];
+        allData.list = [...allData.list, ...(list as VideoType[])];
         await getAll(playlist);
     }
     const data = await setPlaylist(allData);
