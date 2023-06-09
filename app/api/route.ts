@@ -51,7 +51,6 @@ export async function GET(req: Request) {
     if (!title || !id) {
         return NextResponse.error();
     }
-    let requestCount = 50;
 
     const allData: allData = {
         totalAmount: 0,

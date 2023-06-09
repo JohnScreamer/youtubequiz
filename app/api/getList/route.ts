@@ -7,7 +7,7 @@ export async function GET(req: Request) {
     const id = searchParams.get("id");
 
     if (!id) {
-        return NextResponse.json({ playlist: "434344" });
+        return NextResponse.error();
     }
 
     await mongoose.connect(

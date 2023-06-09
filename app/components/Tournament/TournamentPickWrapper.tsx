@@ -6,8 +6,6 @@ import Winner from "./Winner/Winner";
 import { VideoList } from "../../../src/Redux/Slice/common";
 import { useTournamentGame } from "../../../src/hooks/useTornamentGame";
 import Title from "../uikit/Title/Title";
-import Image from "next/image";
-import vs from "./../../../public/vs.png";
 
 type TournamentPickWrapperType = {
     videoList: VideoList;
@@ -29,7 +27,7 @@ const TournamentPickWrapper: FC<TournamentPickWrapperType> = ({
                     <Winner winnerName={winner.title} />{" "}
                 </div>
             ) : (
-                <div className="flex flex-col w-full   ">
+                <div className="flex flex-col w-full    ">
                     <h1 className="text-center">Round 1/{totalSongs / 2}</h1>
                     <div className="md:flex hidden  py-6 gap-6 ">
                         {currentSongs.map((el) => (

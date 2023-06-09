@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { YouTubeProps } from "react-youtube";
 
 const Settings = {
     height: "440",

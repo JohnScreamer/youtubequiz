@@ -4,7 +4,6 @@ import Playlist from "../models/PlaylistModel";
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const title = searchParams.get("title");
-    console.log(title);
 
     if (!title) {
         await mongoose.connect(
