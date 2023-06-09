@@ -22,9 +22,9 @@ const Splash: FC<SplashType> = () => {
             <div
                 className={`absolute top-0     bg-inherit  overflow-hidden    w-full h-full `}
             >
-                <div className="w-[170px] h-[200px] relative  runFrog animate-[runFrog_2s_ease]">
+                {/* <div className="w-[170px] h-[200px] relative  runFrog animate-[runFrog_2s_ease]">
                     <Image alt="flash" fill={true} src={flash} />
-                </div>
+                </div> */}
             </div>
         </>
     );
