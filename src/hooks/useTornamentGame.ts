@@ -29,7 +29,7 @@ export const useTournamentGame = (
             winnerArr.current.length === 1 &&
             currentSongs.length === 2
         ) {
-            console.log("game is end");
+            ("game is end");
             setWinner(winnerArr.current[0]);
             return;
         }
@@ -39,7 +39,7 @@ export const useTournamentGame = (
             winnerArr.current = [];
         }
         getSong(arr.current);
-        console.log(arr.current, currentSongs, winnerArr.current, "here");
+        arr.current, currentSongs, winnerArr.current, "here";
     };
 
     const getSong = (arr: Array<VideoType>) => {

@@ -16,7 +16,7 @@ export const useGame = (listArr: Array<VideoType>) => {
     const getSong = (arr: Array<VideoType>) => {
         if (!arr.length) {
             setGameStatus(true);
-            console.log("game over");
+            ("game over");
             return;
         }
         const song = arr.pop();

@@ -4,7 +4,6 @@ import YouTube from "react-youtube";
 import BottomGameControllers from "./BottomGameControllers";
 import VideoInfo from "./VideoInfo";
 import PlayBtnArea from "./PlayBtnArea";
-import { OPTS } from "../../../src/constats/youtubeConfig";
 type GameType = {
     videoId: string;
     title: string;
@@ -28,11 +27,14 @@ const Game: FC<GameType> = ({ videoId, next, title, totalPoints, img }) => {
         isSongReady,
         setTruthySongStatus,
         defOPTS,
+        isPlayedReal
     } = useGuessSongs({
         ref: PlayerRef,
         next,
         videoId,
     });
+
+    
 
     return (
         <div className="max-w-[400px] w-full">
@@ -40,6 +42,7 @@ const Game: FC<GameType> = ({ videoId, next, title, totalPoints, img }) => {
                 <YouTube
                     videoId={videoId}
                     onReady={setTruthySongStatus}
+                    onPlay={isPlayedReal}
                     opts={defOPTS}
                     ref={PlayerRef}
                 />
@@ -66,6 +69,7 @@ const Game: FC<GameType> = ({ videoId, next, title, totalPoints, img }) => {
                 nextRight={nextRight}
                 nextWrong={nextWrong}
                 songPoints={songPoints}
+                title={title}
             />
         </div>
     );

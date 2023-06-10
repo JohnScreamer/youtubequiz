@@ -19,7 +19,7 @@ export const usePlayer = ({ ref }: PlayerType) => {
         ref?.current.internalPlayer.pauseVideo();
     };
     const playVideo = () => {
-        console.log(ref?.current, "here");
+        ref?.current, "here";
         if (!ref?.current) return;
         ref?.current.internalPlayer.playVideo();
     };

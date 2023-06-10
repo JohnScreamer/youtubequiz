@@ -2,9 +2,9 @@ import { FC } from "react";
 import Counter from "./Counter";
 import Equalizer from "./Equalizer";
 import QuestionMark from "../svg/QuestionMark";
-import PlayBtn from "../uikit/btn/PlayBtn";
 import Play from "./Play";
-
+import Replay10Icon from "@mui/icons-material/Replay10";
+import DefBtn from "../uikit/btn/DefBtn";
 type PlayBtnAreaType = {
     isPlayed: false | 5 | 10;
     play: () => void;
@@ -19,18 +19,23 @@ const PlayBtnArea: FC<PlayBtnAreaType> = ({
     isSongReady,
 }) => {
     return (
-        <div className="flex item-center justify-center">
+        <div className="flex item-center justify-center relative w-full">
             {isPlayed ? (
-                <div className="flex flex-col gap-8  min-h-[250px] ">
-                    <Counter startNum={isPlayed} />
-                    <div className="mt-auto">
-                        <Equalizer />
+                <>
+                    <div className="flex flex-col gap-8 w-full  min-h-[250px] ">
+                        <Counter startNum={isPlayed} />
+                        <div className="mt-auto">
+                            <Equalizer />
+                        </div>
                     </div>
-                </div>
+                </>
             ) : !isPlayBtnVisible ? (
                 <Play isSongReady={isSongReady} play={play} />
             ) : (
-                <QuestionMark />
+                <>
+                    {" "}
+                    <QuestionMark />
+                </>
             )}
         </div>
     );

@@ -44,7 +44,7 @@ const changeWindow = (
 
 export const useYoutubeOptions = () => {
     const [state, setState] = useState<YouTubeType>(Settings);
-    console.log(document.documentElement.clientWidth);
+    document.documentElement.clientWidth;
 
     useEffect(() => {
         changeWindow(setState);

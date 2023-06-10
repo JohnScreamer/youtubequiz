@@ -11,12 +11,12 @@ type MainWrapperType = {
 };
 
 const MainWrapper: FC<MainWrapperType> = ({ children }) => {
-    console.log("main wrapper");
+    ("main wrapper");
 
     const theme = useAppSelector((state) => state.common.theme);
     return (
         <body
-            className={"App flex max-w-[1920px]  flex-col h-full"}
+            className={"App flex max-w-[1920px] mx-auto   flex-col h-full"}
             lang="en"
             data-theme={theme}
         >

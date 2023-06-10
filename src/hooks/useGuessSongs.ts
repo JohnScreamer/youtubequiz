@@ -13,6 +13,8 @@ const defaultOPTION = OPTS;
 export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
     const [songPoints, setPoints] = useState(10);
     const [isPlayed, setPlayed] = useState<5 | 10 | false>(false);
+    const [isRealPlay, setRealPlay] = useState(false);
+
     const [defOPTS, setOPTS] = useState<OPTType>(defaultOPTION);
     const { muteVideo, pauseVideo, playVideo } = usePlayer({ ref });
     const [isPlayBtnVisible, setBtnVisibleStatus] = useState(false);
@@ -20,32 +22,45 @@ export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
         "wrong" | "right" | boolean
     >(false);
     const [isSongReady, setSongStatus] = useState(false);
-
+    const time = useRef(0);
     useEffect(() => {
+        time.current = randomSec();
+        console.log(time.current);
+
         setOPTS((prev: YouTubeProps["opts"]) => ({
             ...prev,
-            playerVars: { start: randomSec() },
+            playerVars: { start: time.current },
         }));
-        console.log(defOPTS);
-
+        setRealPlay(false);
         setSongStatus(false);
     }, [videoId]);
     const setTruthySongStatus = () => {
         setSongStatus(true);
     };
+    const isPlayedReal = () => {
+        setRealPlay(true);
+    };
+
     const startPlay = () => {
-        console.log("start play");
         playVideo();
         setTimeout(() => {
             pauseVideo();
             setPlayed(false);
+            setRealPlay(false);
         }, 10000);
+    };
+    const PlayAgain = (timer: number) => {
+        if (!timer) {
+            return;
+        }
+
+        setTimeout(() => {
+            PlayAgain(timer - 1);
+        }, 500);
     };
 
     const PlayExtraTime = () => {
         if (!songPoints) {
-            console.log("no points", songPoints);
-
             return;
         }
         setPlayed(5);
@@ -55,14 +70,22 @@ export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
         setTimeout(() => {
             pauseVideo();
             setPlayed(false);
+            setRealPlay(false);
         }, 5000);
+        setTimeout(() => {
+            PlayAgain(10);
+        }, 500);
     };
 
     const play = () => {
         startPlay();
         setPlayed(10);
         setBtnVisibleStatus(true);
+        setTimeout(() => {
+            PlayAgain(20);
+        }, 500);
     };
+
     const nextWrong = () => {
         setTitleStatus("wrong");
         setPlayed(5);
@@ -98,5 +121,6 @@ export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
         isSongReady,
         setTruthySongStatus,
         defOPTS,
+        isPlayedReal,
     };
 };

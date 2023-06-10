@@ -23,9 +23,8 @@ const Header: FC<HeaderType> = () => {
                     <HomeIcon />
                 </DefBtn>
             </Link>
-            <div className="flex text-xl font-extrabold gap-2 relative z-2   p-2 px-8 pixel">
+            <div className="flex ma:text-xl text-base font-extrabold gap-2 relative z-2 text-center  p-2 px-8 pixel">
                 Quiz game
-                
             </div>
             <div className="relative z-2">
                 <DefBtn

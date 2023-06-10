@@ -20,11 +20,12 @@ const listItem: FC<listItemType> = ({ list: { title, list }, id }) => {
 
     return (
         <li className="flex gap-1 flex-col p-3 downStyle  w-full">
-            <h2 className="text-base capitalize pixel font-bold p-1 flex flex-col gap-2 text-center ">
+            <h4 className="text-center ">Items: {list.length}</h4>
+            <h2 className="text-base capitalize pixel  font-bold p-1 flex flex-col gap-2 text-center ">
                 {title}
             </h2>
-            <h4 className="text-center mt-auto">Items: {list.length}</h4>
-            <div className=" gap-1 grid-cols-4 grid  mb-2">{imgArr}</div>
+
+            <div className=" gap-1 grid-cols-4 grid mt-auto mb-2">{imgArr}</div>
             <div className="flex flex-col gap-2 ">
                 <Link className="w-full" href={`/guessSong?id=${id}`}>
                     <DefBtn sx="py-[8px]">Guess song</DefBtn>

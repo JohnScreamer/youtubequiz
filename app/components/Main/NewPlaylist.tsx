@@ -20,14 +20,19 @@ const NewPlaylist: FC<NewPlaylistType> = () => {
             return;
         }
         setLoadingStatus(true);
-        await fetch(`/api?title=${data.name}&url=${data.link}`).then((data) =>
-            data.json()
-        );
+        try {
+            await fetch(`/api?title=${data.name}&url=${data.link}`).then(
+                (data) => data.json()
+            );
+        } catch (error) {
+            ToasterFn.error("some error , or  this  playlist is privat");
+            setLoadingStatus(false);
+            return;
+        }
         router.refresh();
-
+        setLoadingStatus(false);
         ToasterFn.success(`Create ${name} playlist`);
         setData({ name: "", link: "" });
-        setLoadingStatus(false);
     };
 
     return (

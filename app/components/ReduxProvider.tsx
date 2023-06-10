@@ -9,7 +9,7 @@ type ReduxProviderType = {
 };
 
 const ReduxProvider: FC<ReduxProviderType> = ({ children }) => {
-    console.log("redux?");
+    ("redux?");
     return <Provider store={store}>{children}</Provider>;
 };
 

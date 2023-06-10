@@ -6,7 +6,7 @@ import Spiner from "./components/uikit/Spiner/Spiner";
 
 export default async function Home(props: { searchParams: { title: string } }) {
     return (
-        <div className="  h-full flex gap-4  flex-col ">
+        <div className="  h-full flex gap-4  flex-col  ">
             <div>
                 <Search />
             </div>

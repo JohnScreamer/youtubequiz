@@ -51,7 +51,7 @@ body {
         rgb(135, 80, 104) 0%,
         rgba(10, 34, 61, 1) 100%
     );
-    --main-color: whitesmoke;
+    --main-color: rgba(238, 174, 202, 1);
     --svg-color: rgb(0, 0, 0);
     --form-bg: rgba(129, 125, 125, 0.284);
 }

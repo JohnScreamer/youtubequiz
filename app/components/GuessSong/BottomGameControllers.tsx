@@ -1,15 +1,17 @@
-import { title } from "process";
 import { FC } from "react";
 import DefBtn from "../uikit/btn/DefBtn";
 import GuessSongTextArea from "../uikit/GuessSongTextArea";
 import DoneIcon from "@mui/icons-material/Done";
 import CancelIcon from "@mui/icons-material/Cancel";
+import { shortTitle } from "../../../src/utils/shortTitle";
 type BottomGameControllersType = {
     songPoints: number;
     PlayExtraTime: () => void;
     isPlayed: false | 10 | 5;
     nextWrong: () => void;
     nextRight: () => void;
+    title: string;
+   
 };
 
 const BottomGameControllers: FC<BottomGameControllersType> = ({
@@ -18,10 +20,12 @@ const BottomGameControllers: FC<BottomGameControllersType> = ({
     nextRight,
     nextWrong,
     songPoints,
+    title,
 }) => {
     return (
         <>
             <h2>Point for song: {songPoints}</h2>
+
             <div className="flex gap-2 flex-col">
                 <div className="flex gap-2">
                     <DefBtn onClick={PlayExtraTime} disabled={!!isPlayed}>

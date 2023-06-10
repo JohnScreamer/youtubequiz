@@ -13,7 +13,7 @@ const getImg = (data: Thumbnails) => {
 };
 
 const getDataFromYoutube = async (vidId: string, pageToken?: string) => {
-    console.log("youtube");
+    ("youtube");
 
     const str = pageToken ? `&pageToken=${pageToken}` : "";
 

@@ -20,14 +20,9 @@ const VideoInfo: FC<VideoInfoType> = ({ img, isTitleViable, title }) => {
                     <span className="text-red-700">It was </span>
                 )}
                 <span className="font-bold">{title}</span>
-                <div className=" p-2 shadow-[1px_3px_4px_black]  rounded-xl ">
-                    <div className="relative    bg-red rounded-xl overflow-hidden   ">
-                        <Image
-                            src={img}
-                            width={300}
-                            height={230}
-                            alt="playlist img"
-                        />
+                <div className=" p-2 shadow-[1px_3px_4px_black] rounded-xl  ">
+                    <div className="relative    bg-red rounded-xl overflow-hidden  w-[300px] h-[200px]   ">
+                        <Image src={img} fill={true} alt="playlist img" />
                     </div>
                 </div>
             </h2>

@@ -1,25 +1,33 @@
-import { TextField } from "@mui/material";
-import { ChangeEvent, FC, useState } from "react";
+import { FC } from "react";
 import { useSimilarity } from "../../../src/hooks/useSimilarity";
+import { shortTitle } from "../../../src/utils/shortTitle";
 import CustomTextArea from "./CustomTextArea/CustomTextArea";
 
 type GuessSongTextAreaType = {
     title?: string;
     nextSong: () => void;
-    isDisabled:boolean;
+    isDisabled: boolean;
 };
 
 const GuessSongTextArea: FC<GuessSongTextAreaType> = ({
     title = "",
     nextSong,
-    isDisabled
+    isDisabled,
 }) => {
-    // const str = title?.replace("(Official Video)", "");
     const { setText, value } = useSimilarity({ title, nextSong });
+    console.log(title);
     return (
         <div className=" mt-4">
             <h2>Write here name and author of song</h2>
-            <CustomTextArea value={value} onChange={setText} disabled={isDisabled} />
+            <CustomTextArea
+                value={value}
+                onChange={setText}
+                disabled={isDisabled}
+            />
+            <div className="text-end ">
+                {" "}
+                Letters:{shortTitle(title).length - shortTitle(value).length}
+            </div>
         </div>
     );
 };
