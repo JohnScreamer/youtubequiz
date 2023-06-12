@@ -28,7 +28,7 @@ const TournamentPick = async ({
     return (
         <div className="  py-4 flex  flex-col items-center">
             {data.list ? (
-                <TournamentPickWrapper videoList={data} number={8} />
+                <TournamentPickWrapper videoList={data} />
             ) : (
                 <Spiner />
             )}

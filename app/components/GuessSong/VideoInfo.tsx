@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
+import DefBtn from "../uikit/btn/DefBtn";
+import SongInfoShow from "./SongInfoShow";
 
 type VideoInfoType = {
     title: string;
@@ -10,22 +12,16 @@ type VideoInfoType = {
 const VideoInfo: FC<VideoInfoType> = ({ img, isTitleViable, title }) => {
     return (
         <>
-            <h2
-                className="text-2xl flex justify-center items-center flex-col text-center  
+            <div
+                className="text-2xl flex justify-center relative items-center flex-col text-center  
                     animate-[scaleAnim_0.5s_ease-in-out] "
             >
-                {isTitleViable === "right" ? (
-                    <span className="text-green-700">Correct </span>
-                ) : (
-                    <span className="text-red-700">It was </span>
-                )}
-                <span className="font-bold">{title}</span>
-                <div className=" p-2 shadow-[1px_3px_4px_black] rounded-xl  ">
-                    <div className="relative    bg-red rounded-xl overflow-hidden  w-[300px] h-[200px]   ">
-                        <Image src={img} fill={true} alt="playlist img" />
-                    </div>
-                </div>
-            </h2>
+                <SongInfoShow
+                    img={img}
+                    isTitleViable={isTitleViable}
+                    title={title}
+                />
+            </div>
         </>
     );
 };

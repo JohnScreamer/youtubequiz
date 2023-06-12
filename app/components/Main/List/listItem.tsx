@@ -30,6 +30,9 @@ const listItem: FC<listItemType> = ({ list: { title, list }, id }) => {
                 <Link className="w-full" href={`/guessSong?id=${id}`}>
                     <DefBtn sx="py-[8px]">Guess song</DefBtn>
                 </Link>
+                <Link className="w-full" href={`/king?id=${id}`}>
+                    <DefBtn sx="py-[8px]"> King of the mountain</DefBtn>
+                </Link>
                 <RoundsCount id={id} num={list.length} />
             </div>
         </li>

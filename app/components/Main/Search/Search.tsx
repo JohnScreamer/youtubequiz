@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import sleepCat from "./../../../../public/sllipycatgif.gif";
+import { useScrollToTop } from "../../../../src/hooks/useScrollToTop";
 type SearchType = {};
 
 const Search: FC<SearchType> = () => {
@@ -14,6 +15,7 @@ const Search: FC<SearchType> = () => {
     const title = searchParams.get("title");
     const [value, setValue] = useState(title || "");
     const router = useRouter();
+    useScrollToTop();
     const isEmpty = !title && !value;
     const search = () => {
         if (isEmpty) {

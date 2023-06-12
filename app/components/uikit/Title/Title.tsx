@@ -10,7 +10,7 @@ const Title: FC<TitleType> = (props) => {
     return (
         <h3
             {...restProps}
-            className={` text-3xl w-full text-center   font-bold  downStyle   ${sx} `}
+            className={` lg:text-3xl text-xl   w-full text-center   font-bold  downStyle   ${sx} `}
         >
             {children}
         </h3>

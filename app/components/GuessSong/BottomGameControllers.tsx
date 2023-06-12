@@ -11,7 +11,6 @@ type BottomGameControllersType = {
     nextWrong: () => void;
     nextRight: () => void;
     title: string;
-   
 };
 
 const BottomGameControllers: FC<BottomGameControllersType> = ({
@@ -24,7 +23,9 @@ const BottomGameControllers: FC<BottomGameControllersType> = ({
 }) => {
     return (
         <>
-            <h2>Point for song: {songPoints}</h2>
+            <h2 className={`${isPlayed ? "opacity-0" : "opacity-100"}`}>
+                Point for song: {songPoints}
+            </h2>
 
             <div className="flex gap-2 flex-col">
                 <div className="flex gap-2">
@@ -39,7 +40,7 @@ const BottomGameControllers: FC<BottomGameControllersType> = ({
                         rightIcon={<DoneIcon />}
                         disabled={!!isPlayed}
                     >
-                        I now
+                        I know
                     </DefBtn>
                     <DefBtn
                         variant="error"

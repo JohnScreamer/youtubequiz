@@ -27,14 +27,12 @@ const Game: FC<GameType> = ({ videoId, next, title, totalPoints, img }) => {
         isSongReady,
         setTruthySongStatus,
         defOPTS,
-        isPlayedReal
+        isPlayedReal,
     } = useGuessSongs({
         ref: PlayerRef,
         next,
         videoId,
     });
-
-    
 
     return (
         <div className="max-w-[400px] w-full">
@@ -47,7 +45,7 @@ const Game: FC<GameType> = ({ videoId, next, title, totalPoints, img }) => {
                     ref={PlayerRef}
                 />
             </div>
-            <div className="min-h-[400px] flex justify-center items-center">
+            <div className="min-h-[400px] relative flex justify-center items-center">
                 {isTitleViable ? (
                     <VideoInfo
                         img={img}
@@ -58,6 +56,7 @@ const Game: FC<GameType> = ({ videoId, next, title, totalPoints, img }) => {
                     <PlayBtnArea
                         isPlayBtnVisible={isPlayBtnVisible}
                         play={play}
+                        videoId={videoId}
                         isPlayed={isPlayed}
                         isSongReady={isSongReady}
                     />

@@ -6,10 +6,11 @@ import Winner from "./Winner/Winner";
 import { VideoList } from "../../../src/Redux/Slice/common";
 import { useTournamentGame } from "../../../src/hooks/useTornamentGame";
 import Title from "../uikit/Title/Title";
-
+import { useScrollToTop } from "../../../src/hooks/useScrollToTop";
+import Image from "next/image";
+import vs from "./../../../public/bvs.gif";
 type TournamentPickWrapperType = {
     videoList: VideoList;
-    number: number;
 };
 
 const TournamentPickWrapper: FC<TournamentPickWrapperType> = ({
@@ -19,22 +20,23 @@ const TournamentPickWrapper: FC<TournamentPickWrapperType> = ({
         videoList.list,
         8
     );
-
+    useScrollToTop();
     return (
         <>
             {winner ? (
-                <div>
-                    <Winner winnerName={winner.title} />{" "}
-                </div>
+                <Winner winnerName={winner.title} />
             ) : (
-                <div className="flex flex-col w-full    ">
+                <div className="flex flex-col w-full   ">
                     <h1 className="text-center">Round 1/{totalSongs / 2}</h1>
-                    <div className="md:flex hidden  py-6 gap-6 ">
+                    <div className="md:flex hidden  py-6 gap-6   relative">
                         {currentSongs.map((el) => (
                             <Title key={el._id}>{el.title}</Title>
                         ))}
+                        <div className="absolute right-[50%] top-[50%] w-[130px] h-[130px] translate-x-[50%] translate-y-[-50%] ">
+                            <Image alt="vs logo" src={vs} fill={true} />
+                        </div>
                     </div>
-                    <div className="  flex md:flex-row     flex-col w-full gap-6">
+                    <div className="  flex md:flex-row    flex-col w-full gap-6">
                         {currentSongs.map((el) => (
                             <TournamentCard
                                 key={el._id}

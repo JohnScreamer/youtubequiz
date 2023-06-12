@@ -5,6 +5,7 @@ type DefBtnType = ButtonHTMLAttributes<HTMLButtonElement> & {
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     sx?: string;
+    circle?: boolean;
 };
 const colorStyle = {
     error: "hover:bg-red-600/30 bg-red-600/8",
@@ -13,11 +14,14 @@ const colorStyle = {
 };
 
 const DefBtn: FC<DefBtnType> = (props) => {
-    const { children, className, variant, rightIcon, leftIcon, sx } = props;
+    const { children, className, variant, rightIcon, leftIcon, sx, circle } =
+        props;
     const color = variant ? colorStyle[variant] : colorStyle.default;
     return (
         <button
-            className={`w-full   group enabled:hover:shadow-[inset_1px_3px_4px_black] disabled:bg-slate-500/30  upStyle duration-300 ${color} rounded-full p-2 py-4  ${sx}`}
+            className={`w-full   group enabled:hover:shadow-[inset_1px_3px_4px_black] disabled:bg-slate-500/30  upStyle duration-300 ${color} rounded-full p-2  ${
+                circle ? "" : "py-4"
+            }  ${sx}`}
             {...props}
         >
             <div className=" enabled:group-hover:scale-95  enabled:group-focus:scale-95  enabled:group-active:scale-90  duration-200 flex justify-center items-center gap-[5px]">

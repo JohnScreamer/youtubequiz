@@ -1,11 +1,12 @@
 "use client";
+import Image from "next/image";
 import NextNProgress from "nextjs-progressbar";
 import { FC, ReactNode } from "react";
 import { useAppSelector } from "../../src/hooks/reduxHooks";
 import Footer from "./Footer";
 import Header from "./Header";
 import Toaster from "./modal/Toaster";
-
+import sakura from "./../../public/sakura.gif";
 type MainWrapperType = {
     children: ReactNode;
 };
@@ -16,7 +17,9 @@ const MainWrapper: FC<MainWrapperType> = ({ children }) => {
     const theme = useAppSelector((state) => state.common.theme);
     return (
         <body
-            className={"App flex max-w-[1920px] mx-auto   flex-col h-full"}
+            className={
+                "App flex max-w-[1920px] mx-auto relative   flex-col h-full"
+            }
             lang="en"
             data-theme={theme}
         >

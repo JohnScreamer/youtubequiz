@@ -26,3 +26,11 @@ const def = {
 };
 
 export type OPTType = typeof def;
+export const OPTSPreview: YouTubeProps["opts"] = {
+    height: "220",
+    width: "320",
+
+    playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+    },
+};
