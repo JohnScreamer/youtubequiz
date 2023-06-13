@@ -25,7 +25,7 @@ const Search: FC<SearchType> = () => {
     };
 
     return (
-        <div className="flex justify-end items-center  ">
+        <div className="inline-flex justify-end items-end  ">
             <div className=" md:max-w-[300px] max-w-full md:flex-row flex-col relative  w-full flex items-center gap-2">
                 <CustomInput
                     type="text"

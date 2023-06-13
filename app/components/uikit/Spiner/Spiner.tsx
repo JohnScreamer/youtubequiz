@@ -11,7 +11,7 @@ const Spiner: FC<SpinerType> = ({ sx, posNo }) => {
         <>
             <div
                 className={`${
-                    posNo ? "" : "fixed top-[50%] left-[50%] "
+                    posNo ? "" : "fixed top-[50%] left-[50%] z-40"
                 } ${sx}`}
             >
                 <Image alt="spinner" src={runcat} width={100} height={100} />

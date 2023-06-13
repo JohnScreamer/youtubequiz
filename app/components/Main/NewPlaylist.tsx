@@ -36,9 +36,9 @@ const NewPlaylist: FC<NewPlaylistType> = () => {
     };
 
     return (
-        <div className=" p-4  upStyleNoAnim ">
+        <div className="     ">
             <form onSubmit={submit}>
-                <div className="flex flex-col gap-2">
+                <div className="  flex  md:flex-row flex-col   md:items-end gap-2">
                     <label htmlFor="name" className="flex flex-col gap-1">
                         <span>Name for playlist:</span>
                         <CustomInput
@@ -69,16 +69,16 @@ const NewPlaylist: FC<NewPlaylistType> = () => {
                             id="playlist"
                         />
                     </label>
-                </div>
-                <div className="mt-2">
-                    <DefBtn
-                        type="submit"
-                        variant="success"
-                        disabled={isEmpty}
-                        sx="py-[8px]"
-                    >
-                        create playlist
-                    </DefBtn>
+                    <div className="">
+                        <DefBtn
+                            type="submit"
+                            variant="success"
+                            disabled={isEmpty}
+                            sx="py-[10px] px-[20px]"
+                        >
+                            create
+                        </DefBtn>
+                    </div>
                 </div>
             </form>
             {isLoading ? <Spiner /> : null}
