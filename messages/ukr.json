@@ -1,0 +1,26 @@
+{
+    "Index": {
+        "title": "Hello world",
+        "writeNameOfTheSong": "Напишіть ім’я пісні!",
+        "correct": "Вірно",
+        "itWas": "Це був/була",
+        "extraSec": "Додаткові 5 сек",
+        "pointForSong": "Кількість очків за пісню",
+        "iKnow": "Я знаю",
+        "next": "Я не знаю",
+        "writeNameTitle": "Напишіть назву композиції і виконавця",
+        "letters": "Кількість літер",
+        "nameForPlaylist": "Ім’я для плейлиста",
+        "playlistURL": "Плейлист лінк",
+        "create": "створити",
+        "pickBest": "Вибрати кращого",
+        "vote": "Вибрати",
+        "round": "Round",
+        "congratulation": "Вітаю",
+        "youGet": "Ви получаєте",
+        "items": "Елементів",
+        "guessSong": "Вгадай мелодію",
+        "kingOfYheMountain": "Царь гори",
+        "itemsLeft": "Елементів залишилось"
+    }
+}

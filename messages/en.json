@@ -1,0 +1,26 @@
+{
+    "Index": {
+        "title": "Hello world",
+        "writeNameOfTheSong": "Write the name of the song!",
+        "correct": "Correct",
+        "itWas": "It was",
+        "extraSec": "Extra 5 sec",
+        "pointForSong": "Point for song",
+        "iKnow": "I know",
+        "next": "I don't know",
+        "writeNameTitle": "Write here name and author of song",
+        "letters": "Letters",
+        "nameForPlaylist": "Name for playlist",
+        "playlistURL": "Playlist URL",
+        "create": "create",
+        "pickBest": "Pick best",
+        "vote": "Vote",
+        "round": "Round",
+        "congratulation": "Congratulation",
+        "youGet": "You get",
+        "items": "Items",
+        "guessSong": "Guess song",
+        "kingOfYheMountain": "King of the mountain",
+        "itemsLeft": "Items left"
+    }
+}
