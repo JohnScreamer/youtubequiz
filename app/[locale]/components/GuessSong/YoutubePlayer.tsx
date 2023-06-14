@@ -18,12 +18,14 @@ const YoutubePlayer: FC<YoutubePlayerType> = ({ videoId, innerRef }) => {
 
     return (
         <div className="relative">
-            <YouTube
-                videoId={videoId}
-                opts={OPTSPreview}
-                onReady={setIsReady}
-                ref={innerRef}
-            />
+            <div className=" overflow-hidden upStyleNoAnim">
+                <YouTube
+                    videoId={videoId}
+                    opts={OPTSPreview}
+                    onReady={setIsReady}
+                    ref={innerRef}
+                />
+            </div>
 
             {isPlayerReady ? null : (
                 <div className="absolute top-[50%] right-[50%] inline-block translate-x-[50%] translate-y-[-50%] ">

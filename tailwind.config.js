@@ -51,7 +51,7 @@ module.exports = {
                 enter: "enter 3s linear infinite",
             },
             colors: {
-                hotPink: "rgba(238, 174, 202, 1)",
+                hotPink: "rgba(238, 174, 202, .8)",
             },
         },
     },

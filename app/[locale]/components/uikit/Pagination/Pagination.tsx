@@ -33,6 +33,7 @@ const PaginationWrapper: FC<PaginationWrapperType> = ({ totalPage }) => {
                 page={(currentPage + 10) / 10}
                 onChange={(_, page) => setPagination((page - 1) * 10)}
                 color="secondary"
+                className="text-yellow-400"
             />
         </>
     );

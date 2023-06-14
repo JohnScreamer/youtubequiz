@@ -1,5 +1,6 @@
 import { SONGS, SONGS2 } from "./../../constats/songs";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Init } from "v8";
 export type VideoType = {
     url: string;
     title: string;
@@ -43,12 +44,16 @@ const commonSlice = createSlice({
     reducers: {
         toggleTheme: (state) => {
             state.theme = state.theme === "dark" ? "light" : "dark";
+            localStorage.setItem("theme", state.theme);
         },
         setVideoList: (state, action: PayloadAction<Array<Response>>) => {
             state.allVideoList = [...state.allVideoList, ...action.payload];
         },
+        setTheme: (state, action: PayloadAction<"light" | "dark">) => {
+            state.theme = action.payload;
+        },
     },
 });
 
-export const { toggleTheme, setVideoList } = commonSlice.actions;
+export const { toggleTheme, setVideoList, setTheme } = commonSlice.actions;
 export default commonSlice.reducer;
