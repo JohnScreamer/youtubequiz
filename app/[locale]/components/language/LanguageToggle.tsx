@@ -10,6 +10,8 @@ type LanguageToggleType = {};
 const LanguageToggle: FC<LanguageToggleType> = () => {
     const locale = useLocale();
     const path = usePathname();
+    console.log(path);
+
     if (path !== "/ukr" && path !== "/") {
         return null;
     }
