@@ -5,12 +5,12 @@ import RoundsCount from "../../Tournament/RoundsCount";
 import DefBtn from "../../uikit/btn/DefBtn";
 import { Response } from "../../../../../src/Redux/Slice/common";
 import { useTranslations } from "next-intl";
-type listItemType = {
+type ListItemType = {
     list: Response;
     id: string;
 };
 
-const listItem: FC<listItemType> = ({ list: { title, list }, id }) => {
+const ListItem: FC<ListItemType> = ({ list: { title, list }, id }) => {
     const t = useTranslations("Index");
     const imgArr = list.slice(0, 12).map((el) => (
         <div className=" p-2 downStyle " key={el._id}>
@@ -43,4 +43,4 @@ const listItem: FC<listItemType> = ({ list: { title, list }, id }) => {
     );
 };
 
-export default listItem;
+export default ListItem;
