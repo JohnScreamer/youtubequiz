@@ -32,12 +32,10 @@ export default async function RootLayout({
     }
 
     return (
-        <html lang={locale}>
-            <NextIntlClientProvider locale={locale} messages={messages}>
-                <ReduxProvider>
-                    <MainWrapper>{children}</MainWrapper>
-                </ReduxProvider>
-            </NextIntlClientProvider>
-        </html>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+            <ReduxProvider>
+                <MainWrapper>{children}</MainWrapper>
+            </ReduxProvider>
+        </NextIntlClientProvider>
     );
 }

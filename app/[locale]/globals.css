@@ -41,9 +41,9 @@ body {
         rgba(238, 174, 202, 1) 0%,
         rgba(148, 187, 233, 1) 100%
     );
-    --main-color: black;
+    /* --main-color: black;
     --svg-color: rgb(54, 52, 52);
-    --form-bg: rgba(76, 72, 72, 0.181);
+    --form-bg: rgba(76, 72, 72, 0.181); */
 }
 .App[data-theme="dark"] {
     --main-bg: radial-gradient(
@@ -51,13 +51,12 @@ body {
         rgb(135, 80, 104) 0%,
         rgba(10, 34, 61, 1) 100%
     );
-    --main-color: rgba(238, 174, 202, 1);
+    /* --main-color: rgba(238, 174, 202, 1);
     --svg-color: rgb(0, 0, 0);
-    --form-bg: rgba(129, 125, 125, 0.284);
+    --form-bg: rgba(129, 125, 125, 0.284); */
 }
 .App {
     background: var(--main-bg);
-    color: var(--main-color);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
@@ -160,7 +159,7 @@ body {
 @layer components {
     .upStyle {
         @apply active:shadow-[inset_5px_10px_10px_black] focus:shadow-[inset_1px_3px_4px_black] 
-        border-t   hover:border-t-transparent      border-b-transparent border-t-indigo-100    border-b  hover:border-b-indigo-100
+        border-t    border-t-indigo-100    border-b  hover:border-b-indigo-100
         shadow-[1px_3px_4px_black];
     }
     .downStyle {

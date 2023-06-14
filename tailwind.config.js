@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: "class",
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -48,6 +49,9 @@ module.exports = {
             },
             animation: {
                 enter: "enter 3s linear infinite",
+            },
+            colors: {
+                hotPink: "rgba(238, 174, 202, 1)",
             },
         },
     },
