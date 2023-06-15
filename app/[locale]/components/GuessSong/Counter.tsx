@@ -18,7 +18,7 @@ const Counter: FC<CounterType> = ({ startNum }) => {
 
     return (
         <div className="flex justify-center">
-            <span className="animate-[countAnim_1s_ease-in-out_infinite] pixel font-bold  text-4xl ">
+            <span className="animate-[countAnim_1s_ease-in-out_infinite] pixel font-bold  text-4xl dark:staticNeonText ">
                 {" "}
                 {value}
             </span>

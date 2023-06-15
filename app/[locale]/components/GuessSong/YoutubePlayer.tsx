@@ -18,7 +18,7 @@ const YoutubePlayer: FC<YoutubePlayerType> = ({ videoId, innerRef }) => {
 
     return (
         <div className="relative">
-            <div className=" overflow-hidden upStyleNoAnim">
+            <div className=" overflow-hidden upStyleNoAnim ">
                 <YouTube
                     videoId={videoId}
                     opts={OPTSPreview}

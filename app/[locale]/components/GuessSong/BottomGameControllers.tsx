@@ -25,7 +25,11 @@ const BottomGameControllers: FC<BottomGameControllersType> = ({
     const t = useTranslations("Index");
     return (
         <>
-            <h2 className={`${isPlayed ? "opacity-0" : "opacity-100"}`}>
+            <h2
+                className={`dark:text-lightPink ${
+                    isPlayed ? "opacity-0" : "opacity-100"
+                }`}
+            >
                 {t("pointForSong")}: {songPoints}
             </h2>
 

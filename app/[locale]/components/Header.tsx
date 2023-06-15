@@ -24,7 +24,7 @@ const Header: FC<HeaderType> = () => {
                     </DefBtn>
                 </Link>
             </div>
-            <div className="flex ma:text-xl text-base break-keep font-extrabold gap-2 relative z-2 text-center  p-2 px-8 pixel">
+            <div className="flex text-2xl  break-keep font-extrabold gap-2 relative z-2 text-center dark:neonText p-2 px-8 pixel">
                 Quiz game
             </div>
 

@@ -6,12 +6,12 @@ const Equalizer: FC<EqualizerType> = () => {
     return (
         <>
             <div>
-                <div className="container">
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
+                <div className="container ">
+                    <div className="bar dark:neonBar"></div>
+                    <div className="bar dark:neonBar"></div>
+                    <div className="bar dark:neonBar"></div>
+                    <div className="bar dark:neonBar"></div>
+                    <div className="bar dark:neonBar"></div>
                 </div>
             </div>
         </>

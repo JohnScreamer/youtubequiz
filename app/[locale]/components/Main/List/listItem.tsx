@@ -22,7 +22,7 @@ const ListItem: FC<ListItemType> = ({ list: { title, list }, id }) => {
 
     return (
         <li className="flex gap-1 flex-col p-3 downStyle  w-full">
-            <h4 className="text-center ">
+            <h4 className="text-center dark:text-[lightPink]">
                 {t("items")}: {list.length}
             </h4>
             <h2 className="text-base capitalize pixel  font-bold p-1 flex flex-col gap-2 text-center ">
@@ -30,7 +30,7 @@ const ListItem: FC<ListItemType> = ({ list: { title, list }, id }) => {
             </h2>
 
             <div className=" gap-1 grid-cols-4 grid mt-auto mb-2">{imgArr}</div>
-            <div className="flex flex-col gap-2 ">
+            <div className="flex flex-col gap-2 dark:text-[lightPink] ">
                 <Link className="w-full" href={`/guessSong?id=${id}`}>
                     <DefBtn sx="py-[8px]">{t("guessSong")}</DefBtn>
                 </Link>

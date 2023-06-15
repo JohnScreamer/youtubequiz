@@ -27,7 +27,7 @@ export default async function Home(props: {
 
     return (
         <div className="  h-full flex gap-4   flex-col  ">
-            <div className="flex flex-col md:flex-row-reverse justify-end gap-4">
+            <div className="flex flex-col md:flex-row-reverse justify-end gap-4 dark:text-[lightPink]">
                 <Search />
                 <Aside />
             </div>

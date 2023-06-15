@@ -29,14 +29,14 @@ const TournamentPickWrapper: FC<TournamentPickWrapperType> = ({
                 <Winner winnerName={winner.title} />
             ) : (
                 <div className="flex flex-col w-full   ">
-                    <h1 className="text-center">
+                    <h1 className="text-center dark:text-lightPink">
                         {t("round")} 1/{totalSongs / 2}
                     </h1>
-                    <div className="md:flex hidden  py-6 gap-6   relative">
+                    <div className="md:flex hidden  py-6 gap-6   relative dark:text-lightPink">
                         {currentSongs.map((el) => (
                             <Title key={el._id}>{el.title}</Title>
                         ))}
-                        <div className="absolute right-[50%] top-[50%] w-[130px] h-[130px] translate-x-[50%] translate-y-[-50%] ">
+                        <div className="absolute right-[50%] top-[50%] w-[100px] h-[100px] translate-x-[50%] translate-y-[-50%] ">
                             <Image alt="vs logo" src={vs} fill={true} />
                         </div>
                     </div>

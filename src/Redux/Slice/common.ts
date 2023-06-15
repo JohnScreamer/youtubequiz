@@ -34,7 +34,7 @@ type InitType = {
 };
 
 const initialState: InitType = {
-    theme: "light",
+    theme: "dark",
     allVideoList: [],
 };
 

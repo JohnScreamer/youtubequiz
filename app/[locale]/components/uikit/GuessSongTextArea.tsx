@@ -20,13 +20,13 @@ const GuessSongTextArea: FC<GuessSongTextAreaType> = ({
     const t = useTranslations("Index");
     return (
         <div className=" mt-4">
-            <h2>{t("writeNameTitle")}</h2>
+            <h2 className="dark:text-lightPink">{t("writeNameTitle")}</h2>
             <CustomTextArea
                 value={value}
                 onChange={setText}
                 disabled={isDisabled}
             />
-            <div className="text-end ">
+            <div className="text-end  dark:text-lightPink">
                 {t("letters")}:
                 {shortTitle(title).length - shortTitle(value).length}
             </div>

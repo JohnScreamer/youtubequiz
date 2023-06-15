@@ -24,7 +24,7 @@ const MainWrapper: FC<MainWrapperType> = ({ children }) => {
         <html lang={locale} className={theme}>
             <body
                 className={
-                    "App flex max-w-[1920px] mx-auto relative flex-col h-full  dark:text-[hotPink] text-black "
+                    "App flex max-w-[1920px] mx-auto relative flex-col h-full  dark:text-[hotPink]   text-black "
                 }
                 lang="en"
                 data-theme={theme}

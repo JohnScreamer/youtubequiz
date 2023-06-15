@@ -46,11 +46,7 @@ body {
     --form-bg: rgba(76, 72, 72, 0.181);
 }
 .App[data-theme="dark"] {
-    --main-bg: radial-gradient(
-        circle,
-        rgb(135, 80, 104) 0%,
-        rgba(10, 34, 61, 1) 100%
-    );
+    --main-bg: radial-gradient(circle, rgb(31, 45, 81) 0%, rgb(6, 22, 41) 100%);
     --main-color: rgba(238, 174, 202, 1);
     --svg-color: rgb(0, 0, 0);
     --form-bg: rgba(129, 125, 125, 0.284);
@@ -77,13 +73,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.bar {
-    background-color: red;
-    width: 10px;
-    height: 0;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-}
+
 .bar:nth-child(1) {
     animation: bnce 0.7s 0.1s infinite alternate;
 }
@@ -157,6 +147,14 @@ body {
 }
 
 @layer components {
+    .neonAnimStyle {
+        border: 0.2rem solid #fff;
+        border-radius: 2rem;
+        padding: 0.4em;
+        box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+    }
+
     .upStyle {
         @apply active:shadow-[inset_5px_10px_10px_black] focus:shadow-[inset_1px_3px_4px_black] 
         border-t    border-t-indigo-100    border-b  hover:border-b-indigo-100
@@ -167,7 +165,51 @@ body {
         shadow-[inset_1px_3px_4px_black];
     }
     .upStyleNoAnim {
-        @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100   border-b  shadow-[1px_3px_4px_black];
+        @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100  dark:neonAnimStyle  border-b  shadow-[1px_3px_4px_black];
+    }
+    .neonText {
+        animation: flicker 1.5s infinite alternate;
+        color: #fff;
+    }
+    .neonBar {
+        border: 0.2rem solid #fff;
+        border-radius: 2rem;
+        padding: 0.4em;
+        box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+    }
+    .bar {
+        background-color: red;
+        width: 10px;
+        height: 0;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        @apply dark:neonBar;
+    }
+
+    .staticNeonText {
+        color: #fff;
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+            0 0 40px #00ff0d, 0 0 80px #00ff0d, 0 0 90px #00ff0d,
+            0 0 100px #00ff0d, 0 0 150px #00ff0d;
+    }
+    .staticNeonTextBlue {
+        color: #fff;
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+            0 0 40px #3700ff, 0 0 80px #3700ff, 0 0 90px #3700ff,
+            0 0 100px #3700ff, 0 0 150px #3700ff;
+    }
+    .staticNeonTextRed {
+        color: #ffffff;
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+            0 0 40px #ff0000, 0 0 80px #ff0000, 0 0 90px #ff0000,
+            0 0 100px #ff0000, 0 0 150px #ff0000;
+    }
+    .staticNeonTextPink {
+        color: #fff;
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+            0 0 40px #f507ed, 0 0 80px #f507ed, 0 0 90px #f507ed,
+            0 0 100px #f507ed, 0 0 150px #f507ed;
     }
 }
 .MuiPaginationItem-text {
@@ -175,4 +217,31 @@ body {
 }
 .Mui-selected {
     color: white !important;
+}
+
+.neonText {
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+            0 0 40px rgb(255, 0, 140), 0 0 80px rgb(255, 0, 140),
+            0 0 90px rgb(255, 0, 140), 0 0 100px rgb(255, 0, 140),
+            0 0 150px rgb(255, 0, 140);
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
 }
