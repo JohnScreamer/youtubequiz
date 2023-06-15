@@ -17,7 +17,7 @@ const Header: FC<HeaderType> = () => {
     };
     return (
         <header className=" p-4 flex justify-between  max-w-[1920px]  relative z-0">
-            <div className="w-[150px] flex justify-start">
+            <div className="w-[150px] flex justify-start items-center">
                 <Link href={"/"} className="relative z-2">
                     <DefBtn sx="grow-0 py-[8px] px-[8px] ">
                         <HomeIcon />
