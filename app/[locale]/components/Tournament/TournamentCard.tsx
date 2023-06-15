@@ -34,7 +34,7 @@ const TournamentCard: FC<TournamentCardType> = ({ videoData, pickVideo }) => {
                     {videoData.title}
                 </h2>
                 <div
-                    className="p-1 upStyleNoAnim relative overflow-hidden flex justify-center items-center "
+                    className="p-1 upStyleNoAnim dark:upStyleNoAnimDark relative overflow-hidden flex justify-center items-center "
                     style={{
                         width: OPTS2.width + "px",
                         height: OPTS2.height + "px",

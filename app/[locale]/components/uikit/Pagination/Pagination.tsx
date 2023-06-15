@@ -13,15 +13,13 @@ const PaginationWrapper: FC<PaginationWrapperType> = ({ totalPage }) => {
     const pageCount = Math.ceil(+totalPage / 10 || 0);
     const route = useRouter();
     const searchParams = useSearchParams();
-    const urlParams = new URLSearchParams(location.search);
-    const entries = urlParams.entries();
-    const params = paramsToObject(entries);
 
     const currentPage = +searchParams.get("page") || 0;
+    const title = searchParams.get("title") || "";
     console.log(pageCount, totalPage, currentPage);
 
     const setPagination = (page: number) => {
-        route.replace(`?${toUrl({ ...params, page })}`);
+        route.replace(`?${toUrl({ title, page })}`);
     };
     if (pageCount < 2) {
         return null;

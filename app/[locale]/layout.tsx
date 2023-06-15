@@ -14,10 +14,10 @@ export const metadata = {
 
 export default async function RootLayout({
     children,
-    //@ts-ignore
     params,
 }: {
     children: React.ReactNode;
+    params: any;
 }) {
     const locale = useLocale();
 

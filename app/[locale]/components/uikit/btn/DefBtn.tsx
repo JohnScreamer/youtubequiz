@@ -8,9 +8,9 @@ type DefBtnType = ButtonHTMLAttributes<HTMLButtonElement> & {
     circle?: boolean;
 };
 const colorStyle = {
-    error: "hover:bg-red-600/30 bg-red-600/8 dark:staticNeonTextPink",
-    success: "hover:bg-green-500/30 bg-green-500/8 dark:staticNeonTextPink",
-    default: "hover:bg-blue-500/30 bg-blue-500/8 dark:staticNeonTextPink",
+    error: "hover:bg-red-600/30 bg-red-600/8 ",
+    success: "hover:bg-green-500/30 bg-green-500/8 ",
+    default: "hover:bg-blue-500/30 bg-blue-500/8 ",
 };
 
 const DefBtn: FC<DefBtnType> = (props) => {

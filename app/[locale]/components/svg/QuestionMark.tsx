@@ -8,7 +8,7 @@ const QuestionMark: FC<QuestionMarkType> = () => {
     const t = useTranslations("Index");
     return (
         <div className="flex gap-3 justify-center relative flex-col items-center animate-[scaleAnim_0.5s_ease-in-out] dark:text-[lightPink] ">
-            <div>
+            <div className="rounded-full  dark:upStyleNoAnimDarkRound">
                 {" "}
                 <svg
                     width="170px"

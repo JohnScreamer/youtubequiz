@@ -46,7 +46,7 @@ body {
     --form-bg: rgba(76, 72, 72, 0.181);
 }
 .App[data-theme="dark"] {
-    --main-bg: radial-gradient(circle, rgb(31, 45, 81) 0%, rgb(6, 22, 41) 100%);
+    --main-bg: radial-gradient(circle, rgb(41, 60, 106) 0%, rgb(6, 22, 41) 100%);
     --main-color: rgba(238, 174, 202, 1);
     --svg-color: rgb(0, 0, 0);
     --form-bg: rgba(129, 125, 125, 0.284);
@@ -147,14 +147,6 @@ body {
 }
 
 @layer components {
-    .neonAnimStyle {
-        border: 0.2rem solid #fff;
-        border-radius: 2rem;
-        padding: 0.4em;
-        box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
-            0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
-    }
-
     .upStyle {
         @apply active:shadow-[inset_5px_10px_10px_black] focus:shadow-[inset_1px_3px_4px_black] 
         border-t    border-t-indigo-100    border-b  hover:border-b-indigo-100
@@ -165,8 +157,27 @@ body {
         shadow-[inset_1px_3px_4px_black];
     }
     .upStyleNoAnim {
-        @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100  dark:neonAnimStyle  border-b  shadow-[1px_3px_4px_black];
+        @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100   border-b  shadow-[1px_3px_4px_black];
     }
+    .upStyleNoAnimDarkRound {
+        border: 0.2rem solid #fff;
+        border-radius: 2rem;
+        padding: 0.4em;
+
+        border-radius: 100%;
+        box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+    }
+    .upStyleNoAnimDark {
+        border: 0.2rem solid #fff;
+        border-radius: 2rem;
+        padding: 0.4em;
+
+        box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+        /* @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100    border-b  shadow-[1px_3px_4px_black]; */
+    }
+
     .neonText {
         animation: flicker 1.5s infinite alternate;
         color: #fff;
