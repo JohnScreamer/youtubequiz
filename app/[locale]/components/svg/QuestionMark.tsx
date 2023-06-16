@@ -28,7 +28,7 @@ const QuestionMark: FC<QuestionMarkType> = () => {
             <div className="absolute left-[87%]">
                 <SongSvg />
             </div>
-            <p className="text-[25px] w-full dark:staticNeonText">
+            <p className="text-[25px] w-full dark:staticNeonStyleGreen">
                 {t("writeNameOfTheSong")}
             </p>
         </div>

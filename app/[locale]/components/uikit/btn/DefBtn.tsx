@@ -19,12 +19,12 @@ const DefBtn: FC<DefBtnType> = (props) => {
     const color = variant ? colorStyle[variant] : colorStyle.default;
     return (
         <button
-            className={`w-full   group enabled:hover:shadow-[inset_1px_3px_4px_black] disabled:bg-slate-500/30    upStyle duration-300 ${color} rounded-full p-2  ${
+            className={`w-full   group enabled:hover:shadow-[inset_1px_3px_4px_black] disabled:bg-slate-500/30   upStyle  duration-300 ${color} rounded-full p-2  ${
                 circle ? "" : "py-4"
-            }  ${sx}`}
+            }  ${sx} `}
             {...props}
         >
-            <div className=" enabled:group-hover:scale-95 d  enabled:group-focus:scale-95  enabled:group-active:scale-90  duration-200 flex justify-center items-center gap-[5px]">
+            <div className=" enabled:group-hover:scale-95   enabled:group-focus:scale-95  enabled:group-active:scale-90  duration-200 flex justify-center items-center gap-[5px]">
                 {leftIcon}
                 {children}
                 {rightIcon}

@@ -30,7 +30,7 @@ const TournamentCard: FC<TournamentCardType> = ({ videoData, pickVideo }) => {
             <div
                 className={` flex flex-col items-center w-full bg-red    gap-4`}
             >
-                <h2 className=" text-xl w-full text-center md:hidden  font-bold ">
+                <h2 className=" text-xl w-full text-center md:hidden  font-bold  ">
                     {videoData.title}
                 </h2>
                 <div

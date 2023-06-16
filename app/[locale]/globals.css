@@ -4,10 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+    --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,7 +56,11 @@ body {
     --form-bg: rgba(76, 72, 72, 0.181);
 }
 .App[data-theme="dark"] {
-    --main-bg: radial-gradient(circle, rgb(41, 60, 106) 0%, rgb(6, 22, 41) 100%);
+    --main-bg: radial-gradient(
+        circle,
+        rgb(41, 60, 106) 0%,
+        rgb(6, 22, 41) 100%
+    );
     --main-color: rgba(238, 174, 202, 1);
     --svg-color: rgb(0, 0, 0);
     --form-bg: rgba(129, 125, 125, 0.284);
@@ -148,8 +162,8 @@ body {
 
 @layer components {
     .upStyle {
-        @apply active:shadow-[inset_5px_10px_10px_black] focus:shadow-[inset_1px_3px_4px_black] 
-        border-t    border-t-indigo-100    border-b  hover:border-b-indigo-100
+        @apply enabled:active:shadow-[inset_5px_10px_10px_black] enabled:focus:shadow-[inset_1px_3px_4px_black] 
+        border-t    border-t-indigo-100    border-b  enabled:hover:border-b-indigo-100
         shadow-[1px_3px_4px_black];
     }
     .downStyle {
@@ -222,6 +236,16 @@ body {
             0 0 40px #f507ed, 0 0 80px #f507ed, 0 0 90px #f507ed,
             0 0 100px #f507ed, 0 0 150px #f507ed;
     }
+    .staticNeonStyleGreen {
+        color: #fee;
+        text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #29c402, 0 0 0.5em #29c402,
+            0 0 0.1em #29c402, 0 10px 3px #000;
+    }
+    .staticNeonStylePurple {
+        color: #fee;
+        text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #c200e9, 0 0 0.5em #c200e9,
+            0 0 0.1em #c200e9, 0 10px 3px #000;
+    }
 }
 .MuiPaginationItem-text {
     color: var(--main-color) !important;
@@ -255,4 +279,161 @@ body {
     55% {
         text-shadow: none;
     }
+}
+
+.neon-button {
+    font-size: 4rem;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+    position: relative;
+}
+
+.neon-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+
+.neon-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+    color: var(--clr-bg);
+    text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+    opacity: 1;
+}
+.neon-button:hover::after,
+.neon-button:focus::after {
+    opacity: 1;
+}
+
+.logo {
+    text-align: center;
+    width: 35%;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+}
+
+.logo b {
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+        0 0 0.1em #ff4444, 0 10px 3px #000;
+}
+.logo b span {
+    animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2) {
+    animation: blink linear infinite 3s;
+}
+@keyframes blink {
+    78% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    79% {
+        color: #333;
+    }
+    80% {
+        text-shadow: none;
+    }
+    81% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    82% {
+        color: #333;
+        text-shadow: none;
+    }
+    83% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    92% {
+        color: #333;
+        text-shadow: none;
+    }
+    92.5% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+
+#btn-twtr {
+    clear: both;
+    color: #fff;
+    border: 2px solid;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-family: sans-serif;
+    font-size: 14px;
+    width: 13em;
+    padding: 5px 10px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.2);
+    opacity: 0.4;
+}
+#btn-twtr:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.testStyle {
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff44ca, 0 0 0.5em #ff44ca,
+        0 0 0.1em #ff44ca, 0 10px 3px #000;
+}
+.testStyleGreen {
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #29c402, 0 0 0.5em #29c402,
+        0 0 0.1em #29c402, 0 10px 3px #000;
 }

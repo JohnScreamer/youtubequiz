@@ -25,7 +25,7 @@ const ListItem: FC<ListItemType> = ({ list: { title, list }, id }) => {
             <h4 className="text-center dark:text-[lightPink]">
                 {t("items")}: {list.length}
             </h4>
-            <h2 className="text-base capitalize pixel  font-bold p-1 flex flex-col gap-2 text-center dark:staticNeonTextPink ">
+            <h2 className="text-base  pixel  font-bold p-1 flex flex-col gap-2 text-center dark:staticNeonStylePurple ">
                 {title}
             </h2>
 
