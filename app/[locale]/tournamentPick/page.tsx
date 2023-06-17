@@ -1,6 +1,7 @@
 import { getList } from "../../../src/Requests/GetList";
 import { TournamentPropsType } from "../../../src/Types/Tournament.type";
 import { shuffleArr } from "../../../src/utils/shufle";
+import EmptyTab from "../../components/EmptyTab/EmptyTab";
 import ErrorComponent from "../../components/ErrorComponent";
 import TournamentPickWrapper from "../../components/Tournament/TournamentPickWrapper";
 import Spiner from "../../components/uikit/Spiner/Spiner";
@@ -9,7 +10,7 @@ const TournamentPick = async ({
     searchParams: { id, rounds },
 }: TournamentPropsType) => {
     if (!id) {
-        return <div>no id</div>;
+        return <EmptyTab />;
     }
 
     const response = await getList(id);

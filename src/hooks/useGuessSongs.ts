@@ -3,29 +3,30 @@ import { useEffect, useRef, useState } from "react";
 import { OPTS, OPTType } from "../constats/youtubeConfig";
 import { YouTubeProps } from "react-youtube";
 import { randomSec } from "../utils/shufle";
+import { SETTINGS } from "../constats/GameSettings";
 
 type GuessSongsType = PlayerType & {
     next: (points: number) => void;
     videoId: string;
 };
+type TitleViableType = boolean | "wrong" | "right";
 const defaultOPTION = OPTS;
 
 export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
-    const [songPoints, setPoints] = useState(10);
-    const [isPlayed, setPlayed] = useState<5 | 10 | false>(false);
+    const [songPoints, setPoints] = useState<number>(
+        SETTINGS.GUESS_SONG.START_POINT_FOR_SONG
+    );
+    const [isPlayed, setPlayed] = useState<number | false>(false);
     const [isRealPlay, setRealPlay] = useState(false);
 
     const [defOPTS, setOPTS] = useState<OPTType>(defaultOPTION);
-    const { muteVideo, pauseVideo, playVideo } = usePlayer({ ref });
+    const { pauseVideo, playVideo } = usePlayer({ ref });
     const [isPlayBtnVisible, setBtnVisibleStatus] = useState(false);
-    const [isTitleViable, setTitleStatus] = useState<
-        "wrong" | "right" | boolean
-    >(false);
+    const [isTitleViable, setTitleStatus] = useState<TitleViableType>(false);
     const [isSongReady, setSongStatus] = useState(false);
     const time = useRef(0);
     useEffect(() => {
         time.current = randomSec();
-        console.log(time.current);
 
         setOPTS((prev: YouTubeProps["opts"]) => ({
             ...prev,
@@ -47,7 +48,7 @@ export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
             pauseVideo();
             setPlayed(false);
             setRealPlay(false);
-        }, 10000);
+        }, SETTINGS.GUESS_SONG.TIME_FOR_PLAY);
     };
     const PlayAgain = (timer: number) => {
         if (!timer) {
@@ -56,25 +57,25 @@ export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
 
         setTimeout(() => {
             PlayAgain(timer - 1);
-        }, 500);
+        }, SETTINGS.GUESS_SONG.RESTART_PLAYER_TIME);
     };
 
     const PlayExtraTime = () => {
         if (!songPoints) {
             return;
         }
-        setPlayed(5);
-        setPoints((points) => points - 2);
+        setPlayed(SETTINGS.GUESS_SONG.EXTRA_TIME_SEC);
+        setPoints((points) => points - SETTINGS.GUESS_SONG.MINUS_POINTS_FOR_ET);
 
         playVideo();
         setTimeout(() => {
             pauseVideo();
             setPlayed(false);
             setRealPlay(false);
-        }, 5000);
+        }, SETTINGS.GUESS_SONG.EXTRA_TIME);
         setTimeout(() => {
-            PlayAgain(10);
-        }, 500);
+            PlayAgain(SETTINGS.GUESS_SONG.PLAY_TIME_SEC);
+        }, SETTINGS.GUESS_SONG.RESTART_PLAYER_TIME);
     };
 
     const play = () => {
@@ -83,30 +84,30 @@ export const useGuessSongs = ({ ref, next, videoId }: GuessSongsType) => {
         setBtnVisibleStatus(true);
         setTimeout(() => {
             PlayAgain(20);
-        }, 500);
+        }, SETTINGS.GUESS_SONG.RESTART_PLAYER_TIME);
     };
 
     const nextWrong = () => {
         setTitleStatus("wrong");
-        setPlayed(5);
+        setPlayed(SETTINGS.GUESS_SONG.EXTRA_TIME_SEC);
         setTimeout(() => {
             setBtnVisibleStatus(false);
             next(0);
             setPlayed(false);
-            setPoints(10);
+            setPoints(SETTINGS.GUESS_SONG.START_POINT_FOR_SONG);
             setTitleStatus(false);
-        }, 3000);
+        }, SETTINGS.GUESS_SONG.NEXT_TIME);
     };
     const nextRight = () => {
         setTitleStatus("right");
-        setPlayed(10);
+        setPlayed(SETTINGS.GUESS_SONG.PLAY_TIME_SEC);
         setTimeout(() => {
             setBtnVisibleStatus(false);
             next(songPoints);
             setPlayed(false);
-            setPoints(10);
+            setPoints(SETTINGS.GUESS_SONG.START_POINT_FOR_SONG);
             setTitleStatus(false);
-        }, 3000);
+        }, SETTINGS.GUESS_SONG.NEXT_TIME);
     };
 
     return {

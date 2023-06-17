@@ -1,10 +1,9 @@
 import { useTranslations } from "next-intl";
-import { FC,  useRef } from "react";
+import { FC, useRef } from "react";
 import YouTube from "react-youtube";
 import { useMute } from "../../../src/hooks/useMute";
 import { useYoutubeOptions } from "../../../src/hooks/useYoutubeOptions";
 import { VideoType } from "../../../src/Types/APIResponse.type";
-import Splash from "../uikit/animation/Splash";
 import DefBtn from "../uikit/btn/DefBtn";
 
 type TournamentCardType = {
@@ -46,7 +45,6 @@ const TournamentCard: FC<TournamentCardType> = ({ videoData, pickVideo }) => {
                             ref={ref}
                         />
                     </div>
-                    <Splash />
                 </div>
                 <DefBtn variant="success" onClick={pick}>
                     {t("vote")}

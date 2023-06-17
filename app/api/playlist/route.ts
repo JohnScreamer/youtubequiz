@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 import Playlist from "../models/PlaylistModel";
+import { SETTINGS } from "../../../src/constats/GameSettings";
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const title = searchParams.get("title");
@@ -14,9 +15,9 @@ export async function GET(req: Request) {
         );
 
         const playlist = await Playlist.find()
-            .sort({ createdAt: -1 })
+            .sort({ createdAt: SETTINGS.REQUEST.ORDER })
             .skip(page)
-            .limit(8);
+            .limit(SETTINGS.REQUEST.MAX_ITEM);
         const length = await Playlist.find();
         return NextResponse.json({ playlist, page: length.length });
     }
@@ -27,9 +28,9 @@ export async function GET(req: Request) {
 
     const playlist = await Playlist.find({ title: { $regex: title } })
         .find()
-        .sort({ createdAt: -1 })
+        .sort({ createdAt: SETTINGS.REQUEST.ORDER })
         .skip(page)
-        .limit(8);
+        .limit(SETTINGS.REQUEST.MAX_ITEM);
     const length = await Playlist.find({ title: { $regex: title } });
     return NextResponse.json({ playlist, page: length.length });
 }

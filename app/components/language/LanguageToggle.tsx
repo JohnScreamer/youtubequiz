@@ -1,10 +1,8 @@
 import { useLocale } from "next-intl";
 import Link from "next-intl/link";
-import Image from "next/image";
 import { FC, useEffect } from "react";
 import DefBtn from "../uikit/btn/DefBtn";
 import { usePathname, useParams, useSearchParams } from "next/navigation";
-import ukrFlag from "./../../../../public/ukr.gif";
 type LanguageToggleType = {};
 
 const LanguageToggle: FC<LanguageToggleType> = () => {

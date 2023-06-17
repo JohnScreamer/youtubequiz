@@ -1,10 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { VideoType } from "../Types/APIResponse.type";
 type VideoNumType = 4 | 8 | 16 | 32 | 64 | 128;
-export const useTournamentGame = (
-    listArr: Array<VideoType>,
-    videoNum: VideoNumType
-) => {
+export const useTournamentGame = (listArr: Array<VideoType>) => {
     const arr = useRef<Array<VideoType>>([]);
     const [currentSongs, setCurrentSongs] = useState<Array<VideoType>>([]);
     const winnerArr = useRef<Array<VideoType>>([]);
@@ -37,7 +34,6 @@ export const useTournamentGame = (
             winnerArr.current = [];
         }
         getSong(arr.current);
-        arr.current, currentSongs, winnerArr.current, "here";
     };
 
     const getSong = (arr: Array<VideoType>) => {

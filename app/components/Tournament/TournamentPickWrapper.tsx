@@ -18,8 +18,7 @@ const TournamentPickWrapper: FC<TournamentPickWrapperType> = ({
     videoList,
 }) => {
     const { currentSongs, pickVideo, totalSongs, winner } = useTournamentGame(
-        videoList.list,
-        8
+        videoList.list
     );
     useScrollToTop();
     const t = useTranslations("Index");

@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 type BottomGameControllersType = {
     songPoints: number;
     PlayExtraTime: () => void;
-    isPlayed: false | 10 | 5;
+    isPlayed: false | number;
     nextWrong: () => void;
     nextRight: () => void;
     title: string;

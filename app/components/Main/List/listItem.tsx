@@ -13,7 +13,7 @@ type ListItemType = {
 
 const ListItem: FC<ListItemType> = ({ list: { title, list }, id }) => {
     const t = useTranslations("Index");
-    const imgArr = list.slice(0, 9).map((el) => (
+    const imgArr = list.slice(0, 12).map((el) => (
         <div
             className=" upStyleNoAnim dark:upStyleNoAnimDarkSmall overflow-hidden"
             key={el._id}

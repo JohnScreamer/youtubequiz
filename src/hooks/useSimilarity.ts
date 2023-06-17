@@ -1,5 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import stringSimilarity from "string-similarity";
+import { SETTINGS } from "../constats/GameSettings";
 import { shortTitle } from "../utils/shortTitle";
 type Similarity = {
     title: string;
@@ -17,8 +18,8 @@ export const useSimilarity = ({ title, nextSong }: Similarity) => {
         let str2 = str.replace(regex, "").toLowerCase();
 
         const similarity = stringSimilarity.compareTwoStrings(str1, str2);
-        if (similarity > 0.7) {
-            nextSong(10);
+        if (similarity > SETTINGS.GUESS_SONG.STR_SIMILARITY_PERCENT) {
+            nextSong(SETTINGS.GUESS_SONG.START_POINT_FOR_SONG);
         }
     };
     const setText = (e: ChangeEvent<HTMLTextAreaElement>) => {

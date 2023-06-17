@@ -8,7 +8,7 @@ import guy from "./../../../public/VgO.gif";
 import rick from "./../../../public/rick-sanchez-dancing-transparent-sticker-r51qoyn3sgxqo1tu.gif";
 
 type PlayBtnAreaType = {
-    isPlayed: false | 5 | 10;
+    isPlayed: false | number;
     play: () => void;
     isPlayBtnVisible: boolean;
     isSongReady: boolean;
