@@ -185,10 +185,18 @@ body {
     .upStyleNoAnimDark {
         border: 0.2rem solid #fff;
         border-radius: 2rem;
-        padding: 0.4em;
 
         box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
             0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+        /* @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100    border-b  shadow-[1px_3px_4px_black]; */
+    }
+    .upStyleNoAnimDarkSmall {
+        border: 0.1rem solid #fff;
+        border-radius: 1rem;
+        padding: 0.4em;
+
+        box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 1rem #bc13fe,
+            0 0 0.8rem #bc13fe, 0 0 1.8rem #bc13fe, inset 0 0 0.7rem #bc13fe;
         /* @apply border-t  rounded-xl     border-b-transparent border-t-indigo-100    border-b  shadow-[1px_3px_4px_black]; */
     }
 
@@ -245,6 +253,11 @@ body {
         color: #fee;
         text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #c200e9, 0 0 0.5em #c200e9,
             0 0 0.1em #c200e9, 0 10px 3px #000;
+    }
+    .staticStyleYellow {
+        color: #fee;
+        text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #fcf816, 0 0 0.5em #fcf816,
+            0 0 0.1em #fcf816, 0 10px 3px #000;
     }
 }
 .MuiPaginationItem-text {

@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { VideoType } from "../Redux/Slice/common";
-import { shuffleArr } from "../utils/shufle";
+import { VideoType } from "../Types/APIResponse.type";
 type VideoNumType = 4 | 8 | 16 | 32 | 64 | 128;
 export const useTournamentGame = (
     listArr: Array<VideoType>,
@@ -29,7 +28,6 @@ export const useTournamentGame = (
             winnerArr.current.length === 1 &&
             currentSongs.length === 2
         ) {
-            ("game is end");
             setWinner(winnerArr.current[0]);
             return;
         }

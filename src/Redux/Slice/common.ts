@@ -1,36 +1,9 @@
-import { SONGS, SONGS2 } from "./../../constats/songs";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Init } from "v8";
-export type VideoType = {
-    url: string;
-    title: string;
-    img: string;
-    _id: string;
-};
-export type VideoList = {
-    title: string;
-    list: Array<VideoType>;
-};
-export interface Response {
-    _id: string;
-    totalAmount: number;
-    list: List[];
-    title: string;
-    createdAt: string;
-    updatedAt: string;
-    __v: number;
-}
-
-export interface List {
-    url: string;
-    title: string;
-    img: string;
-    _id: string;
-}
+import { VideoType } from "../../Types/APIResponse.type";
 
 type InitType = {
     theme: "light" | "dark";
-    allVideoList: Array<Response>;
+    allVideoList: Array<VideoType>;
 };
 
 const initialState: InitType = {
@@ -46,7 +19,7 @@ const commonSlice = createSlice({
             state.theme = state.theme === "dark" ? "light" : "dark";
             localStorage.setItem("theme", state.theme);
         },
-        setVideoList: (state, action: PayloadAction<Array<Response>>) => {
+        setVideoList: (state, action: PayloadAction<Array<VideoType>>) => {
             state.allVideoList = [...state.allVideoList, ...action.payload];
         },
         setTheme: (state, action: PayloadAction<"light" | "dark">) => {

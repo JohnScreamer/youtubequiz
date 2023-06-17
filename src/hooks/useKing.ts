@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { VideoType } from "../Redux/Slice/common";
+import { VideoType } from "../Types/APIResponse.type";
+
 
 export const useKing = ({ listArr }: { listArr: Array<VideoType> }) => {
     const arr = useRef<Array<VideoType>>([]);

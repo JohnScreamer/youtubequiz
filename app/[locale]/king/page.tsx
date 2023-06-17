@@ -1,26 +1,20 @@
-import { VideoList } from "../../../src/Redux/Slice/common";
+import { getList } from "../../../src/Requests/GetList";
+import { KingPropsType } from "../../../src/Types/King.type";
 import { shuffleArr } from "../../../src/utils/shufle";
-import KingOfTheMountainWrapper from "../components/KingOfTheMountain/KingOfTheMountainWrapper";
+import ErrorComponent from "../../components/ErrorComponent";
+import KingOfTheMountainWrapper from "../../components/KingOfTheMountain/KingOfTheMountainWrapper";
 
-const getList = async (id: string) => {
-    const response = await fetch(`${process.env.URL}/api/getList?id=${id}`, {
-        cache: "no-store",
-    }).then((data) => data.json());
-
-    return response;
-};
-
-const King = async ({
-    searchParams: { id },
-}: {
-    searchParams: { id: string };
-}) => {
+const King = async ({ searchParams: { id } }: KingPropsType) => {
     if (!id) {
         return <div>no id</div>;
     }
+
     const response = await getList(id);
-    const playlist = response.playlist as VideoList;
-    const data: VideoList = {
+    if ("error" in response) {
+        return <ErrorComponent />;
+    }
+    const playlist = response;
+    const data = {
         ...playlist,
         list: shuffleArr(playlist.list),
     };

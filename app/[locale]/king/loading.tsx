@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Spiner from "../components/uikit/Spiner/Spiner";
+import Spiner from "../../components/uikit/Spiner/Spiner";
 
 type LoadingType = {};
 

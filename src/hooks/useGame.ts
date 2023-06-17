@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { VideoType } from "../Redux/Slice/common";
+import { VideoType } from "../Types/APIResponse.type";
 import { shuffleArr } from "../utils/shufle";
 
 export const useGame = (listArr: Array<VideoType>) => {
@@ -16,7 +16,6 @@ export const useGame = (listArr: Array<VideoType>) => {
     const getSong = (arr: Array<VideoType>) => {
         if (!arr.length) {
             setGameStatus(true);
-            ("game over");
             return;
         }
         const song = arr.pop();

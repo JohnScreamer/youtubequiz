@@ -19,5 +19,5 @@ export async function GET(req: Request) {
     if (!playlist) {
         return NextResponse.error();
     }
-    return NextResponse.json({ playlist });
+    return NextResponse.json(playlist);
 }
