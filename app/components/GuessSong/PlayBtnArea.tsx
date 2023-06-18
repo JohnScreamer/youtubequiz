@@ -5,6 +5,7 @@ import Equalizer from "./Equalizer";
 import Play from "./Play";
 import QuestionSection from "./QuestionSection";
 import guy from "./../../../public/VgO.gif";
+import dance from "./../../../public/dancefiction.gif";
 import rick from "./../../../public/rick-sanchez-dancing-transparent-sticker-r51qoyn3sgxqo1tu.gif";
 
 type PlayBtnAreaType = {
@@ -31,7 +32,7 @@ const PlayBtnArea: FC<PlayBtnAreaType> = ({
                         <div className="mt-auto">
                             <Equalizer />
                         </div>
-                        <div className="absolute left-[-18px] bottom-[-112px]">
+                        <div className="absolute left-[-18px] bottom-[-112px] block dark:hidden">
                             <Image
                                 src={rick}
                                 alt="dance img"
@@ -39,12 +40,20 @@ const PlayBtnArea: FC<PlayBtnAreaType> = ({
                                 height={200}
                             />
                         </div>
-                        <div className="absolute right-[-25px] bottom-[-136px]">
+                        <div className="absolute right-[-25px] bottom-[-136px] block dark:hidden">
                             <Image
                                 src={guy}
                                 alt="dance img"
                                 width={320}
                                 height={250}
+                            />
+                        </div>
+                        <div className="absolute right-[90px] bottom-[-100px] hidden dark:block ">
+                            <Image
+                                src={dance}
+                                alt="dance img"
+                                width={200}
+                                height={135}
                             />
                         </div>
                     </div>

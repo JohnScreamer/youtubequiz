@@ -15,8 +15,6 @@ export default async function RootLayout({
     children,
     params,
 }: MainLayoutProps) {
-    console.log(params);
-
     const locale = useLocale();
     if (params.locale !== locale) {
         notFound();

@@ -20,6 +20,8 @@
         "items": "Items",
         "guessSong": "Guess song",
         "kingOfYheMountain": "King of the mountain",
-        "itemsLeft": "Items left"
+        "itemsLeft": "Items left",
+        "toMain": "To Main",
+        "somethingWentWrong!": "Something went wrong!"
     }
 }

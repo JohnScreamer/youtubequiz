@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { VideoType } from "../Types/APIResponse.type";
 
-
 export const useKing = ({ listArr }: { listArr: Array<VideoType> }) => {
     const arr = useRef<Array<VideoType>>([]);
+    const totalSongs = useRef(0);
     const [currentSongs, setCurrentSongs] = useState<Array<VideoType>>([]);
     const [winner, setWinner] = useState<VideoType | null>(null);
-    const totalSongs = useRef(0);
     const [tempWinner, setTempWinner] = useState<VideoType | null>(null);
 
     useEffect(() => {
