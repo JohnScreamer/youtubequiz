@@ -3,7 +3,7 @@ import {
     CustomErrorType,
     GetPlaylistResponseType,
 } from "../../../../src/Types/APIResponse.type";
-import ErrorComponent from "../../ErrorComponent";
+import ErrorComponent from "../../uikit/ErrorComponent";
 import PaginationWrapper from "../../uikit/Pagination/Pagination";
 import Spiner from "../../uikit/Spiner/Spiner";
 import VideoList from "../List/VideoList";

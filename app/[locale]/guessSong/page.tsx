@@ -1,6 +1,6 @@
 import { getList } from "../../../src/Requests/GetList";
 import { GuessSongType } from "../../../src/Types/GuessSong.type";
-import ErrorComponent from "../../components/ErrorComponent";
+import ErrorComponent from "../../components/uikit/ErrorComponent";
 import GameWrappper from "../../components/GuessSong/GameWrappper";
 import Spiner from "../../components/uikit/Spiner/Spiner";
 

@@ -28,7 +28,7 @@ const QuestionSection: FC<QuestionSectionType> = ({ videoId }) => {
                 {isPlayerVisible ? (
                     <DefBtn
                         onClick={togglePlayerStatus}
-                        circle
+                        circle={true}
                         title="close youtube player"
                     >
                         <HelpIcon />
@@ -36,7 +36,7 @@ const QuestionSection: FC<QuestionSectionType> = ({ videoId }) => {
                 ) : (
                     <DefBtn
                         onClick={togglePlayerStatus}
-                        circle
+                        circle={true}
                         title="open youtube player"
                     >
                         <YouTubeIcon />

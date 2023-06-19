@@ -15,7 +15,7 @@ const EmptyTab: FC<EmptyTabType> = () => {
                 <Image alt="mo content logo" src={glitch} fill={true} />
             </div>
             <Link href={"/"}>
-                <DefBtn circle>Go to Home</DefBtn>
+                <DefBtn circle={true}>Go to Home</DefBtn>
             </Link>
         </div>
     );

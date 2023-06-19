@@ -2,8 +2,8 @@ import { getList } from "../../../src/Requests/GetList";
 import { KingPropsType } from "../../../src/Types/King.type";
 import { shuffleArr } from "../../../src/utils/shufle";
 import EmptyTab from "../../components/EmptyTab/EmptyTab";
-import ErrorComponent from "../../components/ErrorComponent";
-import KingOfTheMountainWrapper from "../../components/KingOfTheMountain/KingOfTheMountainWrapper";
+import ErrorComponent from "../../components/uikit/ErrorComponent";
+import KingOfTheMountainWrapper from "../../components/ChooseBetween/KingOfTheMountainWrapper";
 
 const King = async ({ searchParams: { id } }: KingPropsType) => {
     if (!id) {

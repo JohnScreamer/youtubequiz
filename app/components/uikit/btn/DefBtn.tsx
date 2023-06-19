@@ -5,7 +5,7 @@ type DefBtnType = ButtonHTMLAttributes<HTMLButtonElement> & {
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     sx?: string;
-    circle?: boolean;
+    circle?: boolean | undefined;
 };
 const colorStyle = {
     error: "hover:bg-red-600/30 bg-red-600/8 ",

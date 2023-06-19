@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import RoundsCount from "../../Tournament/RoundsCount";
 import DefBtn from "../../uikit/btn/DefBtn";
 
 import { useTranslations } from "next-intl";
 import { PlaylistType } from "../../../../src/Types/APIResponse.type";
+import RoundsCount from "../../ChooseBetween/RoundsCount";
 type ListItemType = {
     list: PlaylistType;
     id: string;

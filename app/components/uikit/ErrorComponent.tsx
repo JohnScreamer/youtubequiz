@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { FC } from "react";
-import DefBtn from "./uikit/btn/DefBtn";
+import DefBtn from "./btn/DefBtn";
 
 type ErrorComponentType = {};
 

@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { FC } from "react";
-import TournamentCard from "./TournamentCard";
-import Winner from "./Winner/Winner";
+import TournamentCard from "./VideoCard";
 import { useTournamentGame } from "../../../src/hooks/useTornamentGame";
 import Title from "../uikit/Title/Title";
 import { useScrollToTop } from "../../../src/hooks/useScrollToTop";
@@ -10,6 +9,8 @@ import Image from "next/image";
 import vs from "./../../../public/bvs.gif";
 import { useTranslations } from "next-intl";
 import { PlaylistType } from "../../../src/Types/APIResponse.type";
+import Winner from "../uikit/Winner/Winner";
+import VideoCard from "./VideoCard";
 type TournamentPickWrapperType = {
     videoList: PlaylistType;
 };
@@ -41,7 +42,7 @@ const TournamentPickWrapper: FC<TournamentPickWrapperType> = ({
                     </div>
                     <div className="  flex md:flex-row    flex-col w-full gap-6">
                         {currentSongs.map((el) => (
-                            <TournamentCard
+                            <VideoCard
                                 key={el._id}
                                 videoData={el}
                                 pickVideo={pickVideo}

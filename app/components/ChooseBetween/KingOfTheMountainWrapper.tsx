@@ -5,10 +5,10 @@ import { FC } from "react";
 import { useKing } from "../../../src/hooks/useKing";
 import { useScrollToTop } from "../../../src/hooks/useScrollToTop";
 import { PlaylistType } from "../../../src/Types/APIResponse.type";
-import TournamentCard from "../Tournament/TournamentCard";
-import Winner from "../Tournament/Winner/Winner";
 import Title from "../uikit/Title/Title";
+import Winner from "../uikit/Winner/Winner";
 import vs from "./../../../public/bvs.gif";
+import VideoCard from "./VideoCard";
 
 type KingOfTheMountainWrapperType = {
     data: PlaylistType;
@@ -41,7 +41,7 @@ const KingOfTheMountainWrapper: FC<KingOfTheMountainWrapperType> = ({
                     </div>
                     <div className="  flex md:flex-row     flex-col w-full gap-6">
                         {currentSongs.map((el) => (
-                            <TournamentCard
+                            <VideoCard
                                 key={el._id}
                                 videoData={el}
                                 pickVideo={pickVideo}

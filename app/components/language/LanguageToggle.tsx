@@ -29,7 +29,7 @@ const LanguageToggle: FC<LanguageToggleType> = () => {
             <div className="flex gap-2 items-center">
                 {locale === "ukr" ? (
                     <Link href={"/"} locale="en">
-                        <DefBtn circle>
+                        <DefBtn circle={true}>
                             <div className="rounded-full overflow-hidden">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ const LanguageToggle: FC<LanguageToggleType> = () => {
                     </Link>
                 ) : (
                     <Link href={"/"} locale="ukr">
-                        <DefBtn circle>
+                        <DefBtn circle={true}>
                             <div className="rounded-full overflow-hidden">
                                 <svg
                                     version="1.1"

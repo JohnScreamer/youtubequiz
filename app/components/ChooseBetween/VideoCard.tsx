@@ -6,12 +6,12 @@ import { useYoutubeOptions } from "../../../src/hooks/useYoutubeOptions";
 import { VideoType } from "../../../src/Types/APIResponse.type";
 import DefBtn from "../uikit/btn/DefBtn";
 
-type TournamentCardType = {
+type VideoCardType = {
     videoData: VideoType;
     pickVideo: (id: string) => void;
 };
 
-const TournamentCard: FC<TournamentCardType> = ({ videoData, pickVideo }) => {
+const VideoCard: FC<VideoCardType> = ({ videoData, pickVideo }) => {
     const ref = useRef<YouTube>(null);
     const divRef = useRef<HTMLDivElement>(null);
     const OPTS2 = useYoutubeOptions();
@@ -54,4 +54,4 @@ const TournamentCard: FC<TournamentCardType> = ({ videoData, pickVideo }) => {
     );
 };
 
-export default TournamentCard;
+export default VideoCard;
