@@ -3,7 +3,7 @@ import { FC, FormEvent, useState } from "react";
 import DefBtn from "../uikit/btn/DefBtn";
 import CustomInput from "../uikit/CustomInput/CustomInput";
 import { useRouter } from "next/navigation";
-import Spiner from "../uikit/Spiner/Spiner";
+import Spinner from "../uikit/Spinner/Spinner";
 import { ToasterFn } from "../modal/toasterFn";
 import { useTranslations } from "next-intl";
 
@@ -83,7 +83,7 @@ const NewPlaylist: FC<NewPlaylistType> = () => {
                     </div>
                 </div>
             </form>
-            {isLoading ? <Spiner /> : null}
+            {isLoading ? <Spinner /> : null}
         </div>
     );
 };

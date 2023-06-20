@@ -1,24 +1,17 @@
 "use client";
-import { FC, ReactNode, useEffect } from "react";
+import { FC, ReactNode } from "react";
 import Footer from "./Footer";
-import Header from "./Header";
+import Header from "./Header/Header";
 import Toaster from "./modal/Toaster";
-import { useAppDispatch, useAppSelector } from "../../src/hooks/reduxHooks";
 import { useLocale } from "next-intl";
-import { setTheme } from "../../src/Redux/Slice/common";
+import { useSetTheme } from "../../src/hooks/useSetTheme";
 type MainWrapperType = {
     children: ReactNode;
 };
 
 const MainWrapper: FC<MainWrapperType> = ({ children }) => {
-    const theme = useAppSelector((state) => state.common.theme);
-    const dispatch = useAppDispatch();
-    useEffect(() => {
-        const theme = localStorage.getItem("theme") as "dark" | "light";
-
-        theme && dispatch(setTheme(theme));
-    }, []);
     const locale = useLocale();
+    const theme = useSetTheme();
     return (
         <html lang={locale} className={theme}>
             <body

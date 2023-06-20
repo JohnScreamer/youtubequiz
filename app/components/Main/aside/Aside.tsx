@@ -1,5 +1,5 @@
 import { FC } from "react";
-import NewPlaylist from "../Main/NewPlaylist";
+import NewPlaylist from "../NewPlaylist";
 
 type AsideType = {};
 

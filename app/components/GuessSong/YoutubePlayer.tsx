@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import { OPTSPreview } from "../../../src/constats/youtubeConfig";
-import Spiner from "../uikit/Spiner/Spiner";
+import Spinner from "../uikit/Spinner/Spinner";
 
 type YoutubePlayerType = {
     videoId: string;
@@ -28,7 +28,7 @@ const YoutubePlayer: FC<YoutubePlayerType> = ({ videoId, innerRef }) => {
 
             {isPlayerReady ? null : (
                 <div className="absolute top-[50%] right-[50%] inline-block translate-x-[50%] translate-y-[-50%] ">
-                    <Spiner posNo />
+                    <Spinner posNo />
                 </div>
             )}
         </div>

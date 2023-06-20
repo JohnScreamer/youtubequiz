@@ -1,10 +1,10 @@
 import { FC } from "react";
-import Spiner from "../../components/uikit/Spiner/Spiner";
+import Spinner from "../../components/uikit/Spinner/Spinner";
 
 type LoadingType = {};
 
 const Loading: FC<LoadingType> = () => {
-    return <Spiner />;
+    return <Spinner />;
 };
 
 export default Loading;

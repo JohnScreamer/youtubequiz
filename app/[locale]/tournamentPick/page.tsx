@@ -4,7 +4,7 @@ import { shuffleArr } from "../../../src/utils/shufle";
 import EmptyTab from "../../components/EmptyTab/EmptyTab";
 import ErrorComponent from "../../components/uikit/ErrorComponent";
 import TournamentPickWrapper from "../../components/ChooseBetween/TournamentPickWrapper";
-import Spiner from "../../components/uikit/Spiner/Spiner";
+import Spinner from "../../components/uikit/Spinner/Spinner";
 
 const TournamentPick = async ({
     searchParams: { id, rounds },
@@ -30,7 +30,7 @@ const TournamentPick = async ({
             {data.list ? (
                 <TournamentPickWrapper videoList={data} />
             ) : (
-                <Spiner />
+                <Spinner />
             )}
         </div>
     );

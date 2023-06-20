@@ -1,6 +1,9 @@
 import { FC, InputHTMLAttributes } from "react";
 
 type CustomInputType = InputHTMLAttributes<HTMLInputElement> & {
+    /**
+     * Extra style
+     */
     sx?: string;
 };
 

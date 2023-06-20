@@ -4,8 +4,8 @@ import {
     GetPlaylistResponseType,
 } from "../../../../src/Types/APIResponse.type";
 import ErrorComponent from "../../uikit/ErrorComponent";
-import PaginationWrapper from "../../uikit/Pagination/Pagination";
-import Spiner from "../../uikit/Spiner/Spiner";
+import PaginationWrapper from "../Pagination/Pagination";
+import Spinner from "../../uikit/Spinner/Spinner";
 import VideoList from "../List/VideoList";
 
 type ContentType = {
@@ -25,7 +25,7 @@ const Content: FC<ContentType> = ({ data, title }) => {
                         <PaginationWrapper totalPage={data?.page} />
                     </div>
                     <section className=" grow rounded-xl mb-auto ">
-                        <Suspense fallback={<Spiner />}>
+                        <Suspense fallback={<Spinner />}>
                             <VideoList
                                 title={title || ""}
                                 data={data.playlist}

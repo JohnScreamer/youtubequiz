@@ -56,7 +56,7 @@ const Search: FC<SearchType> = () => {
                 </div>
                 <DefBtn
                     disabled={isEmpty}
-                    sx="md:hidden  py-[8px] px-[8px]    "
+                    sx="md:hidden  py-[8px] px-[8px]  "
                     onClick={search}
                 >
                     <SearchIcon />

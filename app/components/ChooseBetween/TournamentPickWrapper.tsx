@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { FC } from "react";
-import TournamentCard from "./VideoCard";
 import { useTournamentGame } from "../../../src/hooks/useTornamentGame";
 import Title from "../uikit/Title/Title";
 import { useScrollToTop } from "../../../src/hooks/useScrollToTop";

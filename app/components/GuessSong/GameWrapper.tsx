@@ -3,15 +3,15 @@ import { FC } from "react";
 import { useGame } from "../../../src/hooks/useGame";
 import { useScrollToTop } from "../../../src/hooks/useScrollToTop";
 import { PlaylistType } from "../../../src/Types/APIResponse.type";
-import Spiner from "../uikit/Spiner/Spiner";
+import Spinner from "../uikit/Spinner/Spinner";
 
 import EndGame from "./EndGame/EndGame";
 import Game from "./Game";
 
-type GameWrappperType = {
+type GameWrapperType = {
     VideoList: PlaylistType;
 };
-const GameWrappper: FC<GameWrappperType> = ({ VideoList }) => {
+const GameWrapper: FC<GameWrapperType> = ({ VideoList }) => {
     const { currentSong, nextSong, totalPoints, isGameEnd, totalSongs } =
         useGame(VideoList.list);
     useScrollToTop();
@@ -32,7 +32,7 @@ const GameWrappper: FC<GameWrappperType> = ({ VideoList }) => {
                             img={currentSong.img}
                         />
                     ) : (
-                        <Spiner />
+                        <Spinner />
                     )}
                 </div>
             </div>
@@ -40,4 +40,4 @@ const GameWrappper: FC<GameWrappperType> = ({ VideoList }) => {
     );
 };
 
-export default GameWrappper;
+export default GameWrapper;

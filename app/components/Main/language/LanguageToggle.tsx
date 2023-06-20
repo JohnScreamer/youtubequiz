@@ -1,7 +1,7 @@
 import { useLocale } from "next-intl";
 import Link from "next-intl/link";
 import { FC, useEffect } from "react";
-import DefBtn from "../uikit/btn/DefBtn";
+import DefBtn from "../../uikit/btn/DefBtn";
 import { usePathname, useParams, useSearchParams } from "next/navigation";
 type LanguageToggleType = {};
 

@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { FC } from "react";
 import { useSimilarity } from "../../../src/hooks/useSimilarity";
 import { shortTitle } from "../../../src/utils/shortTitle";
-import CustomTextArea from "./CustomTextArea/CustomTextArea";
+import CustomTextArea from "../uikit/CustomTextArea/CustomTextArea";
 
 type GuessSongTextAreaType = {
     title?: string;

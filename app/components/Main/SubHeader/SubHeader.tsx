@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Aside from "../../aside/Aside";
+import Aside from "../aside/Aside";
 import Search from "../Search/Search";
 
 type SubHeaderType = {};

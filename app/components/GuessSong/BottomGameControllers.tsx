@@ -1,6 +1,6 @@
 import { FC } from "react";
 import DefBtn from "../uikit/btn/DefBtn";
-import GuessSongTextArea from "../uikit/GuessSongTextArea";
+import GuessSongTextArea from "./GuessSongTextArea";
 import DoneIcon from "@mui/icons-material/Done";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useTranslations } from "next-intl";

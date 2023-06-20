@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { FC } from "react";
-import runcat from "./../../../../public/frogrun.gif";
-type SpinerType = {
+import runFrog from "./../../../../public/frogrun.gif";
+type SpinnerType = {
     sx?: string;
     posNo?: boolean;
 };
 
-const Spiner: FC<SpinerType> = ({ sx, posNo }) => {
+const Spinner: FC<SpinnerType> = ({ sx, posNo }) => {
     return (
         <>
             <div
@@ -14,10 +14,10 @@ const Spiner: FC<SpinerType> = ({ sx, posNo }) => {
                     posNo ? "" : "fixed top-[50%] left-[50%] z-40"
                 } ${sx}`}
             >
-                <Image alt="spinner" src={runcat} width={100} height={100} />
+                <Image alt="spinner" src={runFrog} width={100} height={100} />
             </div>
         </>
     );
 };
 
-export default Spiner;
+export default Spinner;

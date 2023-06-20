@@ -1,6 +1,6 @@
 import { FC } from "react";
 import PlayBtn from "../uikit/btn/PlayBtn";
-import Spiner from "../uikit/Spiner/Spiner";
+import Spinner from "../uikit/Spinner/Spinner";
 
 type PlayType = {
     play: () => void;
@@ -8,7 +8,7 @@ type PlayType = {
 };
 
 const Play: FC<PlayType> = ({ play, isSongReady }) => {
-    return <>{isSongReady ? <PlayBtn onClick={play} /> : <Spiner posNo />}</>;
+    return <>{isSongReady ? <PlayBtn onClick={play} /> : <Spinner posNo />}</>;
 };
 
 export default Play;
